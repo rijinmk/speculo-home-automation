@@ -1,3 +1,7 @@
+ ![Speculo File Structure](https://github.com/rijinmk/speculo-home-automation/blob/master/DesignFiles/GitHubFileStructure.jpg)
+
+---
+
 ## 📁Folder: **NodeMCU**
 
 ---
