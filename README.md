@@ -1,10 +1,9 @@
- ![Speculo File Structure](https://github.com/rijinmk/speculo-home-automation/blob/master/DesignFiles/GitHubFileStructure.jpg)
+ ![Speculo File Structure](https://github.com/rijinmk/speculo-home-automation/blob/master/DesignFiles/GitHubFileStructure.jpg?raw=true)
 
 ---
 
 ## 📁Folder: **NodeMCU**
 
----
 
 ### 📝File:`MainController.ino`
 _Language: Embedded C_
@@ -20,8 +19,6 @@ Where 161 is 16-1, 16th GPIO pin and its state which is 1.
 ---
 
 ## 📁Folder: **RaspberryPi**
-
----
 
 This folder will contain all the code that will go into our Raspberry Pi Server.
 
