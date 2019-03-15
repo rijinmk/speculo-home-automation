@@ -1,17 +1,34 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-const PORT = 3000;
+const PORT = 3010;
 var app = express();
 
-app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('assets'));
+app.set('view engine', 'ejs');
 
+// Routing
 // Index Page
-app.use('/', function(req, res) {
+app.get('/', function(req, res) {
 	res.render('index');
 });
+
+// Login Page
+app.get('/login', function(req, res) {
+	res.render('login');
+});
+
+// Register Page
+app.get('/register', function(req, res) {
+	res.render('register');
+});
+
+// Home Page
+app.get('/home', function(req, res) {
+	res.render('home');
+});
+// ------------------
 
 app.listen(PORT, function() {
 	console.log(`Listening to port ${PORT}`);
