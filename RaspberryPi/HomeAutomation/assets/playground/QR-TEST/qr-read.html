@@ -20,11 +20,18 @@
         });
 
         scanner.addListener('scan', function(content){
+            console.log("content");
+            console.log(content);
             alert(content);
         });
 
         Instascan.Camera.getCameras().then(cameras => {
-            scanner.start(cameras[0]);
+            console.log(cameras);
+            if(cameras.length > 0){
+                scanner.start(cameras[0]);
+            }else{
+                alert("Error");
+            }
         });
     </script>
 </body>
