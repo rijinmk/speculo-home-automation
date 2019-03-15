@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Instascan</title>
+    <script type="text/javascript" src="instascan.min.js"></script>
+    <style>
+        #preview{
+            border:1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <video id="preview"></video>
+    
+    <script>
+        let scanner = new Instascan.Scanner({
+            video: document.getElementById('preview')
+        });
+
+        scanner.addListener('scan', function(content){
+            alert(content);
+        });
+
+        Instascan.Camera.getCameras().then(cameras => {
+            scanner.start(cameras[0]);
+        });
+    </script>
+</body>
+
+</html>
