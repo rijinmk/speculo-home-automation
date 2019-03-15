@@ -1,0 +1,3 @@
+# Folders that I don't want to upload onto git
+node_modules
+DesignFiles
