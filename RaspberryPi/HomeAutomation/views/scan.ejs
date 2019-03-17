@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/main %>
+    <link rel="stylesheet" href="/style/scan.css">
+    <title>SCAN</title>
+</head>
+
+<body>
+    <!-- Gaurav Mode -->
+    <div id="gaurav"></div>
+
+    <div class="qr_result">
+        <span id="cam-qr-result">QR</span> <br>
+    </div>
+
+    <div id="video_shell">
+        <span class="close_scan">
+            <i class="fa fa-times"></i>
+        </span>
+        <video muted playsinline id="qr-video"></video>
+    </div>
+
+    <img src="/images/SPECULO_LOGO.svg" class="logo" alt="Speculo Logo">
+    <button id="start_scan">SCAN QR</button>
+</body>
+
+<!-- Closing Video -->
+<script>
+    $('.close_scan').click(function(){
+        $('#video_shell').fadeOut();
+        $('#gaurav').fadeOut();
+    });
+
+    $('#start_scan').click(function(){
+        $('#gaurav').fadeIn();
+        $('#video_shell').delay(100).fadeIn();
+    });
+</script>
+
+<!-- QR Code Reader -->
+<script type="module">
+    import QrScanner from "/script/plugin/QR/qr-scanner.min.js";
+    QrScanner.WORKER_PATH = "/script/plugin/QR/qr-scanner-worker.min.js";
+
+    const video = document.getElementById('qr-video');
+    const camHasCamera = document.getElementById('cam-has-camera');
+    const camQrResult = document.getElementById('cam-qr-result');
+    const camQrResultTimestamp = document.getElementById('cam-qr-result-timestamp');
+
+    function setResult(label, result) {
+        label.textContent = result;
+        camQrResultTimestamp.textContent = new Date().toString();
+        label.style.color = 'teal';
+        clearTimeout(label.highlightTimeout);
+        label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
+    }
+
+    // ####### Web Cam Scanning #######
+
+    QrScanner.hasCamera().then(hasCamera => camHasCamera.textContent = hasCamera);
+
+    const scanner = new QrScanner(video, result => setResult(camQrResult, result));
+    scanner.start();
+
+    document.getElementById('inversion-mode-select').addEventListener('change', event => {
+        scanner.setInversionMode(event.target.value);
+    });
+</script>
+</html>

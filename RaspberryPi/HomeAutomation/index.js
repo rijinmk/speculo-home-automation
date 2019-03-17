@@ -14,6 +14,11 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
+// Index Page
+app.get('/scan', function(req, res) {
+	res.render('scan');
+});
+
 // Login Page
 app.get('/login', function(req, res) {
 	res.render('login');
