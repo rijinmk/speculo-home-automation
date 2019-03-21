@@ -69,6 +69,7 @@
 
     document.getElementById('inversion-mode-select').addEventListener('change', event => {
         scanner.setInversionMode(event.target.value);
+        window.href.location = event.target.value;
     });
 </script>
 </html>
