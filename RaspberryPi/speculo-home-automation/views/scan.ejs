@@ -15,7 +15,7 @@
     <div id="gaurav"></div>
 
     <div class="qr_result">
-        <span id="cam-qr-result">QR</span> <br>
+        <span id="cam-qr-result"></span> <br>
     </div>
 
     <div id="video_shell">
@@ -53,9 +53,7 @@
     const camQrResultTimestamp = document.getElementById('cam-qr-result-timestamp');
 
     function setResult(label, result) {
-        label.textContent = result;
-        camQrResultTimestamp.textContent = new Date().toString();
-        label.style.color = 'teal';
+        window.location.href = result
         clearTimeout(label.highlightTimeout);
         label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
     }
@@ -68,6 +66,7 @@
     scanner.start();
 
     document.getElementById('inversion-mode-select').addEventListener('change', event => {
+        // testing
         scanner.setInversionMode(event.target.value);
     });
 </script>

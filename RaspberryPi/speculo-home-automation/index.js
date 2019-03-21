@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-const PORT = 3010;
+const PORT = process.env.PORT || 3010;
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,6 +17,11 @@ app.get('/', function(req, res) {
 // Login Page
 app.get('/login', function(req, res) {
 	res.render('login');
+});
+
+// Scan Page
+app.get('/scan', function(req, res) {
+	res.render('scan');
 });
 
 // Register Page
