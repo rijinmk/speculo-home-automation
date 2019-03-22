@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://rijinmk:password123@ds121636.mlab.com:21636/speculo-home-automation');
+mongoose.connect('mongodb://rijinmk:password123@ds121636.mlab.com:21636/speculo-home-automation', { useNewUrlParser: true });
 
 var Schema = mongoose.Schema({
 	hname: String,
