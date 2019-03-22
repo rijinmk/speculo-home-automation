@@ -27,6 +27,8 @@ body {
 	position: relative;
 	top: -150px;
 	padding-bottom: 30px;
+	position: relative;
+	z-index: 1;
 }
 
 .lr_outer > .lr_shell {
@@ -115,5 +117,21 @@ a:hover {
 }
 
 #logout:hover {
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#error {
+	position: absolute;
+	top: -50px;
+	left: 0px;
+	font-size: 13px;
+	letter-spacing: 1px;
+	width: 100%;
+	text-align: center;
+	background: #db2727;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 10px 0px 10px 0px;
+	z-index: 0;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }

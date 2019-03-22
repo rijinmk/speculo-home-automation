@@ -13,9 +13,15 @@
     <div id="wrapper">
         <div class="lr_header" style="background-image:url('/images/lr_header.png');"></div>
         <div class="lr_outer">
+            <% try{ %>
+                <% if(error){ %>
+                    <div id="error"><%= error %></div>
+                <% } %>
+            <% }catch(err){ %>
+            <% } %>
             <img src="/images/SPECULO_LOGO.svg" class="logo_sm">
             <div class="lr_shell">
-                <form>
+                <form action="/login" method="POST">
                     <input placeholder="USERNAME" name="username" type="text">
                     <input placeholder="PASSWORD" name="password" type="password">
                     <div class="lr_footer">
