@@ -62,7 +62,7 @@ app.post('/login', function(req, res) {
 					res.render('login', { error: 'Password is not right.' });
 				}
 			} else {
-				res.render('login', { error: "Username deosn't exist." });
+				res.render('login', { error: "Username doesn't exist." });
 			}
 		}
 	});
