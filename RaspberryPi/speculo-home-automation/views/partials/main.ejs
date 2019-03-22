@@ -21,3 +21,18 @@
 
 <!-- Font Awesome -->
 <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+
+<!-- ONLY MOBILE -->
+<script>
+    var ww = window.innerWidth; 
+    $(window).on('resize', function(){
+        ww = window.innerWidth; 
+        if(ww > 700){
+            window.location.href = '/onlyMobile';
+        }
+    });
+
+    if(ww > 700){
+        window.location.href = '/onlyMobile';
+    }
+</script>

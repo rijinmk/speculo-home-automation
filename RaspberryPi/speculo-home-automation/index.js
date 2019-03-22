@@ -33,6 +33,11 @@ app.get('/register', function(req, res) {
 app.get('/home', function(req, res) {
 	res.render('home');
 });
+
+// Only Mobile
+app.get('/onlyMobile', function(req, res) {
+	res.render('onlyMobile');
+});
 // ------------------
 
 app.listen(PORT, function() {

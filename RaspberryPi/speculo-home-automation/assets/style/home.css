@@ -1,0 +1,200 @@
+#home_header {
+	width: 100%;
+	/* border: 1px solid red; */
+	margin: 0 auto;
+	padding: 10px 0px 10px 0px;
+	display: flex;
+
+	align-items: center;
+}
+
+#home_header > #hh_info > h2 {
+	letter-spacing: 2px;
+	margin-bottom: 5px;
+}
+
+#home_header > #hh_info > h5 {
+	margin-top: 5px;
+}
+
+#home_header > #hh_info > h6 {
+	font-weight: 300;
+}
+
+#home_header > #hh_info {
+	/* border: 1px solid red; */
+}
+
+#home_header > img {
+	width: 160px;
+}
+
+hr {
+	opacity: 0.2;
+}
+
+#home_content {
+	width: 60%;
+	margin: 0 auto;
+	/* border: 1px solid red; */
+}
+
+#tabs_header {
+	width: 100%;
+	/* border: 1px solid yellow; */
+	display: flex;
+}
+
+#tabs_header > .tab_button {
+	cursor: pointer;
+	flex-grow: 1;
+	text-align: center;
+	padding: 10px 0px 10px 0px;
+	letter-spacing: 2px;
+	border: 1px solid #ddd;
+	position: relative;
+	transition: all 0.3s;
+	/* top: 3px; */
+}
+
+#tabs_header > .tab_button.active {
+	background: #1e1e20;
+	color: #fff;
+	border: none;
+	border: 1px solid #1e1e20;
+	top: 0px;
+}
+
+._content_container {
+	width: calc(100% - 40px);
+	/* border: 1px solid red; */
+	padding: 20px;
+	background: #1e1e20;
+	color: #fff;
+}
+
+#home_tab_container > #selection {
+	/* border: 1px solid red; */
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+
+#home_tab_container > #selection > span {
+	opacity: 0.3;
+	cursor: pointer;
+	transition: opacity 0.3s;
+}
+
+#home_tab_container > #selection > .option:hover {
+	opacity: 1;
+}
+
+#home_tab_container > #selection > .option.active {
+	opacity: 1;
+}
+
+#mirror_tab_container {
+	display: none;
+}
+
+._content_container > .inner_container {
+	margin-top: 20px;
+	/* border: 1px solid red; */
+
+	/* MAKE THIS AUTO LATER */
+	height: 1000px;
+}
+
+#appliance_inner_container {
+	display: none;
+}
+
+/* CARDS */
+.spec_room_card {
+	width: calc(100% - 40px);
+	margin: 20px auto;
+	padding: 20px;
+	background: #fff;
+	color: #000;
+	border-radius: 5px;
+}
+
+.spec_room_card > .spec_room_card_header,
+.spec_room_card > .spec_room_card_content,
+.spec_room_card > .spec_room_card_footer {
+	margin: 0px 0px 15px 0px;
+}
+
+.spec_room_card > .spec_room_card_header {
+	/* border: 1px solid red; */
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.spec_room_card > .spec_room_card_header > .header_info {
+	color: #000;
+	text-align: right;
+}
+
+.spec_room_card > .spec_room_card_header > .header_info > .meter_outer {
+	height: 8px;
+	border: 1px solid #000;
+	margin: 3px 0px 3px 0px;
+	position: relative;
+}
+
+.spec_room_card > .spec_room_card_header > .header_info > h6 {
+	font-weight: 300;
+}
+
+.spec_room_card > .spec_room_card_header > .header_info > h6 > span {
+	color: #db2727;
+	font-weight: 700;
+}
+
+.spec_room_card > .spec_room_card_header > .header_info > .meter_outer > .progess_data {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 8px;
+	width: 20%;
+	background: #3498db;
+}
+
+.spec_room_card > .spec_room_card_content {
+	/* border: 1px solid red; */
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.spec_room_card > .spec_room_card_content > .spec_room_card_content_appliances {
+	display: flex;
+	align-items: center;
+	/* border: 1px solid red; */
+	margin: 10px 0px 10px 0px;
+}
+
+.spec_room_card > .spec_room_card_content > .spec_room_card_content_appliances > a {
+	margin-right: 20px;
+}
+
+.spec_room_card > .spec_room_card_footer {
+	/* border: 1px solid red; */
+	margin-top: 20px;
+	margin-bottom: 10px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.spec_room_card_footer > .turn_off_all {
+	font-size: 20px !important;
+}
+
+@media only screen and (max-width: 550px) {
+	#home_content {
+		width: 90%;
+	}
+}

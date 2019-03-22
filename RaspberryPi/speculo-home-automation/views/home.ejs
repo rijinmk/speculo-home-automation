@@ -6,11 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <% include partials/main %>
+    <link rel="stylesheet" href="/style/home.css">
+
     <title>Welcome home, #name</title>
 </head>
 
 <body>
-    <h1>HOME</h1>
-</body>
+    <div id="wrapper">
+        <!-- Home Header -->
+        <div id="home_header">
+            <img src="/images/SPECULO_LOGO.svg" alt="">
+            <div id="hh_info">
+                <span id="logout">LOGOUT</span>
+                <h2>SPECULO</h2>
+                <hr>
+                <h5>MK's Home</h5>
+                <h6>Welcome home Rijin Mk</h6>
+            </div>
+        </div>
 
+        <!-- Home Content -->
+        <div id="home_content">
+
+            <div id="tabs_header">
+                <div class="tab_button active" id="home_tab_button">HOME</div>
+                <div class="tab_button" id="mirror_tab_button">MIRROR</div>
+            </div>
+
+            <!-- HOME CONTAINER -->
+            <div class="_content_container" id="home_tab_container">
+                <div id="selection">
+                    <span>VIEW : </span>
+                    <span class="option active" id="room_option">ROOM</span>
+                    <span>•</span>
+                    <span class="option" id="appliance_option">APPLIANCE</span>
+                </div>
+
+                <div class="inner_container" id="room_inner_container">
+                    <!--------------------- CARD #1 --------------------->
+                    <div class="spec_room_card">
+                        <div class="spec_room_card_header">
+                            <div class="icon">
+                                <img src="/images/icons/rooms/bedroom.svg" alt="">
+                            </div>
+                            <div class="header_info">
+                                <h1>BEDROOM</h1>
+                                <div class="meter_outer">
+                                    <div class="progess_data"></div>
+                                </div>
+                                <h6><span>3kWh</span> away from the limit</h6>
+                            </div>
+                        </div>
+                        <div class="spec_room_card_content">
+                            <h6>APPLIANCES</h6>
+                            <div class="spec_room_card_content_appliances">
+                                <a href="#"><img src="/images/icons/appliances/lights.svg" alt=""></a>
+                                <a href="#"><img src="/images/icons/appliances/split_ac.svg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="spec_room_card_footer">
+                            <div class="energy_consumed"> <span> <i class="fa fa-bolt"></i> </span> 15kWh</div>
+                            <div class="turn_off_all"> <a href="#"> <i class="fa fa-power-off"></i> </a> </div>
+                        </div>
+                    </div>
+                    <!-------------------------------------------------------->
+                </div>
+
+                <div class="inner_container" id="appliance_inner_container"> 
+                    <!-- ADD CODE HERE -->
+                    
+                    <!-- END -->
+                </div>
+
+            </div>
+
+
+            <!-- MIRROR CONTAINER -->
+            <div class="_content_container" id="mirror_tab_container">
+                MIRROR
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="/script/home.js"></script>
 </html>
