@@ -44,7 +44,11 @@ app.get('/', function(req, res) {
 
 // Login Page - GET
 app.get('/login', function(req, res) {
-	res.render('login');
+	if (req.user) {
+		res.redirect('/home');
+	} else {
+		res.render('login');
+	}
 });
 
 // Login Page - POST
@@ -75,7 +79,11 @@ app.get('/scan', function(req, res) {
 
 // Register Page - GET
 app.get('/register', function(req, res) {
-	res.render('register');
+	if (req.user) {
+		res.redirect('/home');
+	} else {
+		res.render('register');
+	}
 });
 
 // Register Page - POST
@@ -93,7 +101,11 @@ app.post('/register', function(req, res) {
 
 // Home Page
 app.get('/home', function(req, res) {
-	res.render('home');
+	if (req.user) {
+		res.render('home');
+	} else {
+		res.redirect('/login');
+	}
 });
 
 // Logout
