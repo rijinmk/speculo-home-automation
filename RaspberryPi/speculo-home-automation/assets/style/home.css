@@ -198,7 +198,7 @@ hr {
 .spec_app_card_left
 {
 	height :110px;
-	width: calc(100% - 300px);
+	width: 110px;
 	margin: 20px auto;
 	padding: 20px;
 	background: #fff;
@@ -213,7 +213,7 @@ hr {
 .spec_app_card_right
 {
 	height :110px;
-	width: calc(100% - 300px);
+	width: 110px;
 	margin: 20px auto;
 	padding: 20px;
 	background: #fff;
@@ -228,21 +228,27 @@ hr {
 .spec_app_card_center
 {
 	height :110px;
-	width: calc(100% - 300px);
+	width: 110px;
 	margin: 20px auto;
 	padding: 20px;
 	background: #fff;
 	color: #000;
 	border-radius: 14px;
 	text-align: center;
-
 }
 .text_app
 {
 	color:gray;
 	font-size:15px;
 }
-
+.number_appliances
+{
+	background-color: #000;
+	color: #fff;
+	border-radius: 90px;
+	width: 20px;
+	float: right;
+}
 /* END CODE HERE */
 
 @media only screen and (max-width: 550px) {
