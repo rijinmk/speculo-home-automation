@@ -102,7 +102,8 @@ hr {
 	/* border: 1px solid red; */
 
 	/* MAKE THIS AUTO LATER */
-	height: 1000px;
+	height: auto;
+	padding-bottom: 10px;
 }
 
 #appliance_inner_container {
@@ -192,6 +193,10 @@ hr {
 .spec_room_card_footer > .turn_off_all {
 	font-size: 20px !important;
 }
+
+/* ADD CODE HERE */
+
+/* END CODE HERE */
 
 @media only screen and (max-width: 550px) {
 	#home_content {
