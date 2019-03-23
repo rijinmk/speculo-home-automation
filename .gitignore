@@ -1,3 +1,9 @@
 # Folders that I don't want to upload onto git
 node_modules
 DesignFiles
+.DS_Store
+DesignFiles/SPECULO APP DESIGN.xd
+RaspberryPi/.DS_Store
+RaspberryPi/Display/.DS_Store
+RaspberryPi/speculo-home-automation/.DS_Store
+RaspberryPi/speculo-home-automation/assets/.DS_Store
