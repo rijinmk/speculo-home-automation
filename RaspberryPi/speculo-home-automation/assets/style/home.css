@@ -195,59 +195,46 @@ hr {
 }
 
 /* ADD CODE HERE */
-.spec_app_card_left
+#appliance_inner_container > #appliance_inner_shell{
+	border:1px solid red;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.spec_app_card
 {
-	height :110px;
-	width: 110px;
-	margin: 20px auto;
+	min-height: 100px;
+	max-height: 100px;
+	width: 100px;
+	margin: 10px;
 	padding: 20px;
 	background: #fff;
 	color: #000;
 	border-radius: 14px;
 	text-align: center;
 	margin-left: 10px;
-	display: inline-block;
-
-}
-
-.spec_app_card_right
-{
-	height :110px;
-	width: 110px;
-	margin: 20px auto;
-	padding: 20px;
-	background: #fff;
-	color: #000;
-	border-radius: 14px;
-	text-align: center;
-	margin-right: 0px;
-	float: right;
-	display: inline-block;
-
-}
-.spec_app_card_center
-{
-	height :110px;
-	width: 110px;
-	margin: 20px auto;
-	padding: 20px;
-	background: #fff;
-	color: #000;
-	border-radius: 14px;
-	text-align: center;
+	position: relative;
+	align-self: center;
 }
 .text_app
 {
 	color:gray;
-	font-size:15px;
+	font-size:12px;
 }
 .number_appliances
 {
 	background-color: #000;
 	color: #fff;
-	border-radius: 90px;
+	border-radius: 100%;
 	width: 20px;
-	float: right;
+	height: 20px;
+	position: absolute;
+	font-size: 9px;
+	line-height:20px;
+	top:10px;
+	right:10px;
 }
 /* END CODE HERE */
 
