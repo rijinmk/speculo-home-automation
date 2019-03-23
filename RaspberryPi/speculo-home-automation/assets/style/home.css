@@ -195,6 +195,53 @@ hr {
 }
 
 /* ADD CODE HERE */
+.spec_app_card_left
+{
+	height :110px;
+	width: calc(100% - 300px);
+	margin: 20px auto;
+	padding: 20px;
+	background: #fff;
+	color: #000;
+	border-radius: 14px;
+	text-align: center;
+	margin-left: 10px;
+	display: inline-block;
+
+}
+
+.spec_app_card_right
+{
+	height :110px;
+	width: calc(100% - 300px);
+	margin: 20px auto;
+	padding: 20px;
+	background: #fff;
+	color: #000;
+	border-radius: 14px;
+	text-align: center;
+	margin-right: 0px;
+	float: right;
+	display: inline-block;
+
+}
+.spec_app_card_center
+{
+	height :110px;
+	width: calc(100% - 300px);
+	margin: 20px auto;
+	padding: 20px;
+	background: #fff;
+	color: #000;
+	border-radius: 14px;
+	text-align: center;
+
+}
+.text_app
+{
+	color:gray;
+	font-size:15px;
+}
 
 /* END CODE HERE */
 
