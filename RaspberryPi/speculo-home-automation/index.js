@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var cookieSession = require('cookie-session');
 var passport = require('passport');
 var User = require('./models/users');
+var fs = require('fs');
 
 const PORT = process.env.PORT || 3010;
 var app = express();
@@ -137,8 +138,17 @@ app.get('/onlyMobile', function(req, res) {
 // Getting sensor data, test
 app.get('/get_sensor_data', function(req, res) {
 	req.query.date = new Date().getTime();
-	console.log(req.query);
-	res.json(req.query);
+	var data = req.query;
+	var json = JSON.stringify(data);
+	fs.writeFile('temp.json', json, 'utf8', function() {});
+	res.send('Got the data!');
+});
+
+app.get('/read_sensor_data', function(req, res) {
+	fs.readFile('temp.json', 'utf8', function readFileCallback(err, data) {
+		obj = JSON.parse(data);
+		res.send(data);
+	});
 });
 
 // ------------------

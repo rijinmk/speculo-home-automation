@@ -81,7 +81,6 @@
                             </label>
                         </div>
                     </div>
-                    light
                 </div>
 
                 <!-- AC -->
@@ -133,6 +132,10 @@
                             <input placeholder="06:00" type="text">
                             <button> <span> <i class="fa fa-chevron-right"></i> </span> </button>
                         </div>
+                        <div class="room_temprature_outer">
+                            <h5>CURRENT ROOM TEMPERATURE</h5>
+                            <h2><span id="room_temp">23.78</span>°C</h2>
+                        </div>
                     </div>
                 </div>
                 <!-- END APP -->
@@ -141,4 +144,13 @@
         </div>
     </div>
 </body>
+<!-- REMOVE THIS LATER -->
+<script>
+    setInterval(function(){
+        $.get('/read_sensor_data', function(data){
+            console.dir(data);
+        });
+    }, 2000);
+</script>
+<!-- END -->
 </html>

@@ -1,15 +1,15 @@
 .container {
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 
 .room_info_outer {
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	display: flex;
 	align-items: center;
 }
 
 .room_info_outer > .room_icon_holder {
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	margin-right: 20px;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .room_info_outer > .room_details {
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 
 .room_info_outer > .room_details > .go_back {
@@ -72,13 +72,14 @@
 }
 
 .app_outer {
-	border: 1px solid green;
+	/* border: 1px solid green; */
 	margin-top: 20px;
 }
 
 .app_holder {
-	border: 1px solid green;
-	padding: 10px;
+	border-top: 1px solid #ddd;
+	/* border-bottom: 1px solid #ddd; */
+	padding: 20px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
@@ -86,12 +87,12 @@
 .each_app {
 	display: flex;
 	justify-content: space-between;
-	border: 1px solid red;
-	margin: 10px 0px 10px 0px;
+	/* border: 1px solid red; */
+	margin: 0px 0px 10px 0px;
 }
 
 .each_app > .app_icon {
-	border: 1px solid yellow;
+	/* border: 1px solid yellow; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -109,7 +110,7 @@
 }
 
 .each_app > .app_time {
-	border: 1px solid grey;
+	/* border: 1px solid grey; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -118,7 +119,7 @@
 }
 
 .each_app > .app_time > div {
-	border-left: 1px solid red;
+	border-left: 1px solid #ddd;
 	flex-grow: 1;
 	height: 20px;
 	width: 1px;
@@ -127,7 +128,7 @@
 /* Slider Button */
 
 .device {
-	border: 1px solid green;
+	/* border: 1px solid green; */
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -192,11 +193,11 @@ input:checked + .sliderapp:before {
 
 /* APP SETTING */
 .app_setting {
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 
 .app_setting > .app_setting_scheduling {
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 
 .app_setting > .app_setting_scheduling > input[type=text] {
@@ -216,4 +217,17 @@ input:checked + .sliderapp:before {
 	height: 40px;
 	border: 1px solid #ddd;
 	outline: none;
+}
+
+.app_setting > .room_temprature_outer {
+	margin-top: 20px;
+}
+
+.app_setting > .room_temprature_outer > h5 {
+	font-weight: 300;
+	margin-bottom: 5px;
+}
+
+.app_setting > .room_temprature_outer > h2 {
+	font-size: 40px;
 }

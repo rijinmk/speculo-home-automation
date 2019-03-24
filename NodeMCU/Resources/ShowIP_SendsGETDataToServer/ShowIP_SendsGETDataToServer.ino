@@ -3,11 +3,6 @@
 #include <WiFiClient.h> 
 #include <ESP8266WebServer.h>
 #include <ESP8266HTTPClient.h>
-#include <Wire.h> 
-#include <LiquidCrystal_I2C.h>
-
-// Set the LCD address to 0x27 for a 16 chars and 2 line display
-LiquidCrystal_I2C lcd(0x3F, 16, 2);
  
 /* Set these to your desired credentials. */
 const char *ssid = "RMK";  //ENTER YOUR WIFI SETTINGS
@@ -43,12 +38,6 @@ void setup() {
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());  //IP address assigned to your ESP
-   // initialize the LCD
-  lcd.begin();
-
-  // Turn on the blacklight and print a message.
-  lcd.backlight();
-  lcd.print(WiFi.localIP());
 }
  
 //=======================================================================
@@ -58,7 +47,7 @@ void loop() {
   HTTPClient http;    //Declare object of class HTTPClient
  
   //GET Data
-  String getData = "?testing=123123123";  //Note "?" added at front
+  String getData = "?testing=123";  //Note "?" added at front
   String Link = "http://192.168.1.3:3010/get_sensor_data" + getData;
   
   http.begin(Link);     //Specify request destination
