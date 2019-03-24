@@ -145,9 +145,9 @@ app.get('/get_sensor_data', function(req, res) {
 });
 
 app.get('/read_sensor_data', function(req, res) {
-	fs.readFile('temp.json', 'utf8', function readFileCallback(err, data) {
-		obj = JSON.parse(data);
-		res.send(data);
+	fs.readFile('temp.json', 'utf8', function(err, data) {
+		var obj = JSON.parse(data);
+		res.send(obj);
 	});
 });
 

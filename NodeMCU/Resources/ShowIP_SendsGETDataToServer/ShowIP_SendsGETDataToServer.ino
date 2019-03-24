@@ -44,10 +44,22 @@ void setup() {
 //                    Main Program Loop
 //=======================================================================
 void loop() {
+
+   int reading = analogRead(0); 
+   // measure the 3.3v with a meter for an accurate value
+   //In particular if your Arduino is USB powered
+   float voltage = reading * 3.3; 
+   voltage /= 1024.0; 
+   
+   // now print out the temperature
+   float temperatureC = (voltage - 0.5) * 100;
+   Serial.print(temperatureC); 
+   Serial.println(" degrees C");
+  
   HTTPClient http;    //Declare object of class HTTPClient
  
   //GET Data
-  String getData = "?testing=123";  //Note "?" added at front
+  String getData = "?temp=" + String(temperatureC);  //Note "?" added at front
   String Link = "http://192.168.1.3:3010/get_sensor_data" + getData;
   
   http.begin(Link);     //Specify request destination
@@ -60,5 +72,5 @@ void loop() {
  
   http.end();  //Close connection
   
-  delay(5000);  //GET Data at every 5 seconds
+  delay(1000);  //GET Data at every 5 seconds
 }

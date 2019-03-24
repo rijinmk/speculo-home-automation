@@ -148,9 +148,10 @@
 <script>
     setInterval(function(){
         $.get('/read_sensor_data', function(data){
-            console.dir(data);
+            console.dir(data.temp);
+            $('#room_temp').text(data.temp);
         });
-    }, 2000);
+    }, 1000);
 </script>
 <!-- END -->
 </html>
