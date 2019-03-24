@@ -118,6 +118,14 @@ app.get('/logout', function(req, res) {
 app.get('/onlyMobile', function(req, res) {
 	res.render('onlyMobile');
 });
+
+// Getting sensor data, test
+app.get('/get_sensor_data', function(req, res) {
+	req.query.date = new Date().getTime();
+	console.log(req.query);
+	res.json(req.query);
+});
+
 // ------------------
 
 app.listen(PORT, function() {

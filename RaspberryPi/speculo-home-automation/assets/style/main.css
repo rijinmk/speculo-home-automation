@@ -135,3 +135,53 @@ a:hover {
 	z-index: 0;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
+
+/* Home Header */
+#home_header {
+	width: 70%;
+	/* border: 1px solid red; */
+	margin: 0 auto;
+	padding: 10px 0px 10px 0px;
+	display: flex;
+
+	align-items: center;
+}
+
+#home_header > #hh_info > h2 {
+	letter-spacing: 2px;
+	margin-bottom: 5px;
+}
+
+#home_header > #hh_info > h5 {
+	margin-top: 5px;
+}
+
+#home_header > #hh_info > h6 {
+	font-weight: 300;
+}
+
+#home_header > #hh_info {
+	/* border: 1px solid red; */
+}
+
+#home_header > img {
+	width: 160px;
+}
+
+hr {
+	opacity: 0.2;
+}
+
+.container {
+	width: 60%;
+	margin: 0 auto;
+}
+
+@media only screen and (max-width: 550px) {
+	#home_header {
+		width: 90%;
+	}
+	.container {
+		width: 90%;
+	}
+}
