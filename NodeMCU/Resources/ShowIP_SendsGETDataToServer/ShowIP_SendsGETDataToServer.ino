@@ -1,4 +1,5 @@
- 
+#include <Wire.h> 
+#include <LiquidCrystal_I2C.h>
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h> 
 #include <ESP8266WebServer.h>
@@ -10,6 +11,9 @@ const char *password = "1fb10a2048";
  
 //Web/Server address to read/write from 
 const char *host = "http://192.168.1.3";   //https://circuits4you.com website or IP address of server
+
+// Set the LCD address to 0x27 for a 16 chars and 2 line display
+LiquidCrystal_I2C lcd(0x3F, 16, 2);
  
 //=======================================================================
 //                    Power on setup
@@ -38,6 +42,11 @@ void setup() {
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());  //IP address assigned to your ESP
+
+  lcd.begin();
+  // Turn on the blacklight and print a message.
+  lcd.backlight();
+  lcd.print(WiFi.localIP());
 }
  
 //=======================================================================
