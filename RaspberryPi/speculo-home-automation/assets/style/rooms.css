@@ -1,0 +1,219 @@
+.container {
+	border: 1px solid red;
+}
+
+.room_info_outer {
+	border: 1px solid red;
+	display: flex;
+	align-items: center;
+}
+
+.room_info_outer > .room_icon_holder {
+	border: 1px solid red;
+	margin-right: 20px;
+}
+
+.room_info_outer > .room_icon_holder > img {
+	width: 100px;
+}
+
+.room_info_outer > .room_details {
+	border: 1px solid red;
+}
+
+.room_info_outer > .room_details > .go_back {
+	border: 1px solid #ddd;
+	color: #aaa;
+	padding: 3px;
+	font-size: 10px;
+	cursor: pointer;
+	border-radius: 10px;
+	transition: all 0.3s;
+}
+
+.room_info_outer > .room_details > .go_back:hover {
+	border: 1px solid #000;
+	color: #000;
+}
+
+.room_info_outer > .room_details > h1 {
+	letter-spacing: 3px;
+}
+
+.room_info_outer > .room_details > h4 {
+	font-size: 13px;
+	margin-top: 5px;
+}
+
+.room_info_outer > .room_details > .energy_consumed {
+	font-size: 10px;
+	margin-top: 5px;
+}
+
+#meter_shell > .meter_outer {
+	height: 20px;
+	border: 1px solid #000;
+	margin: 3px 0px 3px 0px;
+	position: relative;
+	margin-top: 10px;
+}
+
+#meter_shell > .meter_outer > .progess_data {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 20px;
+	width: 20%;
+	background: #3498db;
+}
+
+#meter_shell > #power_cons {
+	font-size: 12px;
+}
+
+.app_outer {
+	border: 1px solid green;
+	margin-top: 20px;
+}
+
+.app_holder {
+	border: 1px solid green;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.each_app {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid red;
+	margin: 10px 0px 10px 0px;
+}
+
+.each_app > .app_icon {
+	border: 1px solid yellow;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 10px 0px 10px;
+}
+
+.each_app > .app_icon > img {
+	width: 50px;
+}
+
+.each_app > .app_icon > span {
+	font-size: 10px;
+	opacity: 0.4;
+}
+
+.each_app > .app_time {
+	border: 1px solid grey;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 250px;
+	margin: 0px 10px 0px 10px;
+}
+
+.each_app > .app_time > div {
+	border-left: 1px solid red;
+	flex-grow: 1;
+	height: 20px;
+	width: 1px;
+}
+
+/* Slider Button */
+
+.device {
+	border: 1px solid green;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.switch {
+	position: relative;
+	width: 50px;
+	height: 25px;
+	/* border: 1px solid red; */
+}
+
+.switch input {
+	display: none;
+}
+
+.sliderapp {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	transition: .4s;
+}
+
+.sliderapp:before {
+	position: absolute;
+	content: "";
+	height: 20px;
+	width: 20px;
+	left: 4px;
+	top: 2px;
+	background-color: white;
+	transition: .4s;
+}
+
+input:checked + .b {
+	background-image: linear-gradient(to right, #80ff75 30%, #7eedd6 70%);
+}
+
+input:checked + .a {
+	background-image: linear-gradient(to right, #11334f 10%, #785780 50%);
+}
+
+input:focus + .sliderapp {
+	box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .sliderapp:before {
+	transform: translateX(23px);
+}
+
+.sliderapp.round {
+	border-radius: 34px;
+}
+
+.sliderapp.round:before {
+	border-radius: 50%;
+}
+
+/* APP SETTING */
+.app_setting {
+	border: 1px solid red;
+}
+
+.app_setting > .app_setting_scheduling {
+	border: 1px solid red;
+}
+
+.app_setting > .app_setting_scheduling > input[type=text] {
+	font-size: 10px;
+	padding: 10px;
+	width: 80px;
+}
+
+.app_setting > .app_setting_scheduling > span {
+	font-size: 10px;
+}
+
+.app_setting > .app_setting_scheduling > button {
+	border: none;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #ddd;
+	outline: none;
+}

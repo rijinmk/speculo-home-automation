@@ -8,14 +8,13 @@
     <% include partials/main %>
     <link rel="stylesheet" href="/style/home.css">
 
-    <title>Welcome home, #name</title>
+    <title>Welcome home, <%= yname %></title>
 </head>
 
 <body>
     <div id="wrapper">
         <!-- Home Header -->
         <% include partials/header %>
-
         <!-- Home Content -->
         <div class="container" id="home_content">
 
@@ -35,7 +34,7 @@
 
                 <div class="inner_container" id="room_inner_container">
                     <!--------------------- CARD #1 --------------------->
-                    <div class="spec_room_card">
+                    <div class="spec_room_card" id="bedroom_room">
                         <div class="spec_room_card_header">
                             <div class="icon">
                                 <img src="/images/icons/rooms/bedroom.svg" alt="">
@@ -61,7 +60,7 @@
                         </div>
                     </div>
                     <!-------------------------------------------------------->
-                    <div class="spec_room_card">
+                    <div class="spec_room_card" id="kitchen_room">
                         <div class="spec_room_card_header">
                             <div class="icon">
                                 <img src="/images/icons/rooms/kitchen.svg" alt="">
@@ -277,6 +276,5 @@
         </div>
     </div>
 </body>
-<script src="/script/home.js"></script>
-
+<script src="/script/home.js"></script> 
 </html>

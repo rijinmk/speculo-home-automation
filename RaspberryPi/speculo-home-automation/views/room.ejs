@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/main %>
+    <link rel="stylesheet" href="/style/rooms.css">
+    <title><%= yname %>'s <%= room %></title>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Home Header -->
+        <% include partials/header %>
+
+        <div class="container">
+            <div class="room_info_outer">
+                <div class="room_icon_holder">
+                    <img src="/images/icons/rooms/bedroom.svg" alt="">
+                </div>
+                
+                <div class="room_details">
+                    <span class="go_back">
+                        <span><i class="fa fa-chevron-left"></i></span>
+                        <span>ROOMS</span>
+                    </span>
+                    <h1>BEDROOM</h1>
+                    <h4>ADMIN CONTROLS</h4>
+                    <div class="energy_consumed"> <span> <i class="fa fa-bolt"></i> </span> 15kWh</div>
+                </div>
+            </div>
+
+            <div id="meter_shell">
+                <div class="meter_outer">
+                    <div class="progess_data"></div>
+                </div>
+                <span id="power_cons"><span>3kWh</span> away from the limit</span>
+            </div>
+
+            <div class="app_outer">
+                <h3>APPLICANCES</h3>
+                <!-- LIGHT -->
+                <div class="app_holder">
+                    <div class="each_app">
+                        <div class="app_icon">
+                            <img src="/images/icons/appliances/light.svg" alt="">
+                            <span>14kWh</span>
+                        </div>
+                        
+                        <div class="app_time">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        
+                        <div class="app_device device">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="sliderapp a round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    light
+                </div>
+
+                <!-- AC -->
+                <div class="app_holder">
+                    <div class="each_app">
+                        <div class="app_icon">
+                            <img src="/images/icons/appliances/air_conditioner.svg" alt="">
+                            <span>14kWh</span>
+                        </div>
+                        
+                        <div class="app_time">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        
+                        <div class="app_device device">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="sliderapp a round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="app_setting">
+                        <div class="app_setting_scheduling">
+                            <input placeholder="22:00" type="text">
+                            <span>to</span>
+                            <input placeholder="06:00" type="text">
+                            <button> <span> <i class="fa fa-chevron-right"></i> </span> </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- END APP -->
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

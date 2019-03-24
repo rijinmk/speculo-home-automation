@@ -45,7 +45,7 @@ app.get('/', function(req, res) {
 // Login Page - GET
 app.get('/login', function(req, res) {
 	if (req.user) {
-		res.redirect('/home');
+		res.redirect(req.user + '/home/');
 	} else {
 		res.render('login');
 	}
@@ -60,7 +60,7 @@ app.post('/login', function(req, res) {
 				if (req.body.password === data.password) {
 					req.login(data, function(_err) {
 						console.log('REQ USER-->' + req.user);
-						res.render('home');
+						res.redirect(data.username + '/home/');
 					});
 				} else {
 					res.render('login', { error: 'Password is not right.' });
@@ -92,7 +92,7 @@ app.post('/register', function(req, res) {
 	User.create(req.body, (err, data) => {
 		if (!err) {
 			console.log(data);
-			res.redirect('/home');
+			res.redirect(data.username + '/home/');
 		} else {
 			res.send(err);
 		}
@@ -100,9 +100,24 @@ app.post('/register', function(req, res) {
 });
 
 // Home Page
-app.get('/home', function(req, res) {
+app.get('/:usermame/home', function(req, res) {
 	if (req.user) {
-		res.render('home');
+		User.findById(req.user, function(err, data) {
+			res.render('home', data);
+		});
+	} else {
+		res.redirect('/login');
+	}
+});
+
+// Inner Room
+app.get('/:usermame/home/:room', function(req, res) {
+	if (req.user) {
+		User.findById(req.user, function(err, data) {
+			console.log(req.params);
+			data.room = req.params.room;
+			res.render('room', data);
+		});
 	} else {
 		res.redirect('/login');
 	}

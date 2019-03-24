@@ -19,3 +19,11 @@ $('#home_tab_container > #selection > .option').click(function() {
 	_id = '#' + _id[0] + '_inner_container';
 	$(_id).slideDown();
 });
+
+// Take the user to the room page
+$('.spec_room_card').click(function() {
+	var _id = $(this).attr('id');
+	_id = _id.split('_')[0];
+	var link = window.location.pathname;
+	window.location.href = window.location.href + _id;
+});
