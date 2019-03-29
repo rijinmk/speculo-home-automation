@@ -39,7 +39,7 @@
 
             <div class="app_outer">
                 <h3>APPLICANCES</h3>
-                <!-- LIGHT -->
+                <!-- LIGHT #1 ------------------------------------------------------------------------- -->
                 <div class="app_holder">
                     <div class="each_app">
                         <div class="app_icon">
@@ -76,14 +76,58 @@
                         
                         <div class="app_device device">
                             <label class="switch">
-                                <input type="checkbox">
+                                <input id="light_1" data-href="/light/1/" type="checkbox">
                                 <span class="sliderapp a round"></span>
                             </label>
                         </div>
                     </div>
                 </div>
 
-                <!-- AC -->
+                 <!-- LIGHT #2 ------------------------------------------------------------------------- -->
+                <div class="app_holder">
+                    <div class="each_app">
+                        <div class="app_icon">
+                            <img src="/images/icons/appliances/light.svg" alt="">
+                            <span>14kWh</span>
+                        </div>
+                        
+                        <div class="app_time">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        
+                        <div class="app_device device">
+                            <label class="switch">
+                                <input id="light_2" data-href="/light/2/" type="checkbox">
+                                <span class="sliderapp a round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AC ------------------------------------------------------------------------- -->
                 <div class="app_holder">
                     <div class="each_app">
                         <div class="app_icon">
@@ -120,17 +164,22 @@
                         
                         <div class="app_device device">
                             <label class="switch">
-                                <input type="checkbox">
+                                <input id="ac_2" data-href="/ac/1/" type="checkbox">
                                 <span class="sliderapp a round"></span>
                             </label>
                         </div>
                     </div>
                     <div class="app_setting">
                         <div class="app_setting_scheduling">
+                             <h5>SCHEDULE</h5>
                             <input placeholder="22:00" type="text">
                             <span>to</span>
                             <input placeholder="06:00" type="text">
                             <button> <span> <i class="fa fa-chevron-right"></i> </span> </button>
+                        </div>
+                         <div class="room_temprature_settings_outer">
+                            <h5>SET ROOM TEMP</h5>
+                            <h2><input placeholder="22 (Degree Celcius)" type="text"></h2>
                         </div>
                         <div class="room_temprature_outer">
                             <h5>CURRENT ROOM TEMPERATURE</h5>
@@ -144,14 +193,15 @@
         </div>
     </div>
 </body>
+<script src="/script/main_controller.js"></script>
 <!-- REMOVE THIS LATER -->
 <script>
-    setInterval(function(){
-        $.get('/read_sensor_data', function(data){
-            console.dir(data.temp);
-            $('#room_temp').text(data.temp);
-        });
-    }, 1000);
+    // setInterval(function(){
+    //     $.get('/read_sensor_data', function(data){
+    //         console.dir(data.temp);
+    //         $('#room_temp').text(data.temp);
+    //     });
+    // }, 1000);
 </script>
 <!-- END -->
 </html>

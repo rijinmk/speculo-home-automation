@@ -14,14 +14,10 @@ app.set('view engine', 'ejs');
 
 // DE/SE Useer
 passport.serializeUser(function(user, done) {
-	console.log('--SER--');
-	console.log(user.id);
 	done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done) {
-	console.log('--DESER--');
-	console.log(id);
 	done(null, id);
 });
 
@@ -115,7 +111,6 @@ app.get('/:usermame/home', function(req, res) {
 app.get('/:usermame/home/:room', function(req, res) {
 	if (req.user) {
 		User.findById(req.user, function(err, data) {
-			console.log(req.params);
 			data.room = req.params.room;
 			res.render('room', data);
 		});
@@ -136,20 +131,20 @@ app.get('/onlyMobile', function(req, res) {
 });
 
 // Getting sensor data, test
-app.get('/get_sensor_data', function(req, res) {
-	req.query.date = new Date().getTime();
-	var data = req.query;
-	var json = JSON.stringify(data);
-	fs.writeFile('temp.json', json, 'utf8', function() {});
-	res.send('Got the data!');
-});
+// app.get('/get_sensor_data', function(req, res) {
+// 	req.query.date = new Date().getTime();
+// 	var data = req.query;
+// 	var json = JSON.stringify(data);
+// 	fs.writeFile('temp.json', json, 'utf8', function() {});
+// 	res.send('Got the data!');
+// });
 
-app.get('/read_sensor_data', function(req, res) {
-	fs.readFile('temp.json', 'utf8', function(err, data) {
-		var obj = JSON.parse(data);
-		res.send(obj);
-	});
-});
+// app.get('/read_sensor_data', function(req, res) {
+// 	fs.readFile('temp.json', 'utf8', function(err, data) {
+// 		var obj = JSON.parse(data);
+// 		res.send(obj);
+// 	});
+// });
 
 // ------------------
 

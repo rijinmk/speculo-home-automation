@@ -1,19 +1,14 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
-
-#include <Wire.h> 
-#include <LiquidCrystal_I2C.h>
  
 // Replace with your network credentials
 const char* ssid = "RMK";
 const char* password = "1fb10a2048";
  
 ESP8266WebServer server(80);   //instantiate server at port 80 (http port)
-
-// Set the LCD address to 0x27 for a 16 chars and 2 line display
-LiquidCrystal_I2C lcd(0x3F, 16, 2);
-
+ 
+String page = "";
 double tempratureData; 
 void setup(void){
 
@@ -38,83 +33,35 @@ void setup(void){
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
-  // Turn on the blacklight and print a message. 
-  lcd.begin();
-  lcd.clear();
-  lcd.backlight();
-  lcd.print(WiFi.localIP());
-
   // ROUTE For Temprature Data
   server.on("/getTemprature", [](){
-    // Serial.println("Sending temprature data");
     server.send(200, "text/plain", String(tempratureData));
   });
   // --------------------------
 
-  // Turn on/off the light
-    // LIGHT #1 : LED ----------------------------------------------------
+  // Turn on/off the light : TEST
+    // LIGHT #1 : LED
     server.on("/light/1/on", [](){
       digitalWrite(16, HIGH);
-      Serial.println("Light #1 is ON");
       server.send(200, "text/plain", "Light #1 ON");
     });
 
     server.on("/light/1/off", [](){
       digitalWrite(16, LOW);
-      Serial.println("Light #1 is OFF");
       server.send(200, "text/plain", "Light #1 OFF");
     });
 
-    server.on("/light/1/status", [](){
-      Serial.println("Sending light #1 status");
-      server.send(200, "text/plain", String(digitalRead(16)));
-    });
-
-    // LIGHT #2 : RELAY ----------------------------------------------------
+    // LIGHT #2 : RELAY
     server.on("/light/2/on", [](){
       digitalWrite(2, HIGH);
-      Serial.println("Light #2 is ON");
       server.send(200, "text/plain", "Light #1 ON");
     });
 
     server.on("/light/2/off", [](){
       digitalWrite(2, LOW);
-      Serial.println("Light #2 is OFF");
       server.send(200, "text/plain", "Light #1 OFF");
     });
-
-    server.on("/light/2/status", [](){
-      Serial.println("Sending light #2 status");
-      server.send(200, "text/plain", String(digitalRead(2)));
-    });
   // --------------------------
-
-  // AC : LCD ----------------------------------------------------
-  String ac_stat;
-  server.on("/ac/1/on", [](){
-    lcd.setCursor(0,1);
-    // ac_stat = "1"
-    lcd.print("AC:ON ");
-    Serial.println("AC is ON");
-    server.send(200, "text/plain", "AC");
-  });
-
-  server.on("/ac/1/off", [](){
-    lcd.setCursor(0,1);
-    // ac_stat = "0"
-    lcd.print("AC:OFF");
-    Serial.println("AC is OFF");
-    server.send(200, "text/plain", "AC");
-  });
-
-  server.on("/ac/1/status", [](){
-    lcd.setCursor(0,1);
-    lcd.print("AC:OFF");
-    Serial.println("Sending AC data");
-    server.send(200, "text/plain", "AC");
-  });
-
-  // ----------------------------------------------------
   
   server.begin();
   Serial.println("Web server started!");
@@ -130,12 +77,7 @@ void loop(void){
   // now print out the temperature
   tempratureData = (voltage - 0.5) * 100;
   //---------------------------------------------------------
-
-  // SHOW TEMP ON LCD --------------------------------------------------
-  lcd.setCursor(7,1);
-  lcd.print(tempratureData);
-  //---------------------------------------------------------
   
+  delay(1000);
   server.handleClient();
-  delay(200);
 }

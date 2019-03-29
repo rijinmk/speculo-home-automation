@@ -76,12 +76,16 @@
 	margin-top: 20px;
 }
 
+.app_outer > h3 {
+	margin-bottom: 20px;
+}
+
 .app_holder {
 	border-top: 1px solid #ddd;
 	/* border-bottom: 1px solid #ddd; */
 	padding: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	/* margin-top: 20px;
+	margin-bottom: 20px; */
 }
 
 .each_app {
@@ -193,7 +197,13 @@ input:checked + .sliderapp:before {
 
 /* APP SETTING */
 .app_setting {
-	/* border: 1px solid red; */
+	margin-top: 20px;
+}
+
+.app_setting > div {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
 }
 
 .app_setting > .app_setting_scheduling {
@@ -223,9 +233,10 @@ input:checked + .sliderapp:before {
 	margin-top: 20px;
 }
 
-.app_setting > .room_temprature_outer > h5 {
+.app_setting h5 {
 	font-weight: 300;
 	margin-bottom: 5px;
+	margin-top: 5px;
 }
 
 .app_setting > .room_temprature_outer > h2 {
