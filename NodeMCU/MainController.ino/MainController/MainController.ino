@@ -15,6 +15,9 @@ ESP8266WebServer server(80);   //instantiate server at port 80 (http port)
 LiquidCrystal_I2C lcd(0x3F, 16, 2);
 
 double tempratureData; 
+String IP; 
+int curr_IP = 0;
+
 void setup(void){
 
   // SETTING UP PINS
@@ -37,12 +40,16 @@ void setup(void){
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
-
+  
+  IP = WiFi.localIP().toString();
+  
   // Turn on the blacklight and print a message. 
   lcd.begin();
   lcd.clear();
-  lcd.backlight();
-  lcd.print(WiFi.localIP());
+   lcd.backlight();
+   lcd.print("IP:");
+   // Serial.println("Length of the IP" + String(IP.length()));
+   lcd.print(IP[10]);
 
   // ROUTE For Temprature Data
   server.on("/getTemprature", [](){
@@ -107,6 +114,17 @@ void setup(void){
     server.send(200, "text/plain", "AC");
   });
 
+  server.on("/ac/1/sch", [](){
+    String timeSch = server.arg("time");
+    Serial.print("Getting time for scheduling: ");
+    Serial.println(timeSch);
+      // SCHEDULING --------------------------------
+      lcd.setCursor(5,0);
+      lcd.print(timeSch);
+      //--------------------------------------------
+    server.send(200, "text/plain", "SCHEDULING");
+  });
+
   server.on("/ac/1/status", [](){
     lcd.setCursor(0,1);
     lcd.print("AC:OFF");
@@ -115,6 +133,11 @@ void setup(void){
   });
 
   // ----------------------------------------------------
+
+  // TEMP --------------------------------
+  lcd.setCursor(13,1);
+  lcd.print("22C");
+  //--------------------------------------------
   
   server.begin();
   Serial.println("Web server started!");
@@ -131,10 +154,20 @@ void loop(void){
   tempratureData = (voltage - 0.5) * 100;
   //---------------------------------------------------------
 
-  // SHOW TEMP ON LCD --------------------------------------------------
+  // SHOW TEMP ON LCD ---------------------------------------
   lcd.setCursor(7,1);
   lcd.print(tempratureData);
   //---------------------------------------------------------
+
+  // SHOW IP --------------------------------------------------
+  //  lcd.setCursor(0,0);
+  //  lcd.print(IP[curr_IP]);
+  //  curr_IP++;
+  //  if(curr_IP == IP.length()-1){
+  //    curr_IP = 0; 
+  //  }
+  //-----------------------------------------------------------
+  
   
   server.handleClient();
   delay(200);

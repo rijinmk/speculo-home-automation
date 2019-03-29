@@ -27,6 +27,15 @@ $('.switch input[type=checkbox]').on('change', function() {
 	console.log(IP_OF_NODEMCU + link + stat);
 });
 
+// SET AC TIME
+$('#set_ac_time').click(function() {
+	var startTime = $('#start_time').val();
+	var endTime = $('#end_time').val();
+	var URL = IP_OF_NODEMCU + '/ac/1/sch?time=' + startTime + '-' + endTime;
+	console.log(URL);
+	$.get(URL);
+});
+
 // GET THE TEMPRATURE DATA FROM SENSOR
 function showTemprature() {
 	$.get(IP_OF_NODEMCU + '/getTemprature', function(data) {

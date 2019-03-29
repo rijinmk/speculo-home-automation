@@ -38,7 +38,7 @@
             </div>
 
             <div class="app_outer">
-                <h3>APPLICANCES</h3>
+                <h3>APPLIANCES</h3>
                 <!-- LIGHT #1 ------------------------------------------------------------------------- -->
                 <div class="app_holder">
                     <div class="each_app">
@@ -48,6 +48,7 @@
                         </div>
                         
                         <div class="app_time">
+                            <div class="duration_bar" id="light_1_duration"></div>
                             <div></div>
                             <div></div>
                             <div></div>
@@ -172,10 +173,10 @@
                     <div class="app_setting">
                         <div class="app_setting_scheduling">
                              <h5>SCHEDULE</h5>
-                            <input placeholder="22:00" type="text">
+                            <input placeholder="22:00" id="start_time" type="text">
                             <span>to</span>
-                            <input placeholder="06:00" type="text">
-                            <button> <span> <i class="fa fa-chevron-right"></i> </span> </button>
+                            <input placeholder="06:00" id="end_time" type="text">
+                            <button id="set_ac_time"> <span> <i class="fa fa-chevron-right"></i> </span> </button>
                         </div>
                          <div class="room_temprature_settings_outer">
                             <h5>SET ROOM TEMP</h5>
