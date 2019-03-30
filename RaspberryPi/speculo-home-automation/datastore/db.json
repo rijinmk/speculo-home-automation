@@ -1,0 +1,24 @@
+{
+	"rijinmk": {
+		"rooms": {
+			"bedroom": {
+				"temprature": [ { "temprature": 22.34, "time": 1553974814384 } ],
+				"appliances": {
+					"light_001": {
+						"state": 0,
+						"history": [ { "state": 0, "time": 1553974814384 }, { "state": 0, "time": 1553974814384 } ]
+					},
+					"light_002": {
+						"state": 0,
+						"history": [ { "state": 0, "time": 1553974814384 }, { "state": 1, "time": 1553974814384 } ]
+					},
+					"ac_001": {
+						"state": 0,
+						"history": [ { "state": 1, "time": 1553974814384 }, { "state": 0, "time": 1553974814384 } ],
+						"display": [ [ "IP:9", "00:00-00:00" ], [ "AC:OFF", "22.78", "22C" ] ]
+					}
+				}
+			}
+		}
+	}
+}
