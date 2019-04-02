@@ -40,8 +40,23 @@ void setup(void){
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
-  
+
+  // SHOW HOST IP
   IP = WiFi.localIP().toString();
+  int sumDot = 0; int x;
+  for(x = 0; x < IP.length(); x++){
+    if(IP[x] == '.'){
+      sumDot++;
+      if(sumDot==3){
+        break; 
+      }
+    }
+  };
+
+  String host_IP = "";
+  for(x+1; x < IP.length(); x++){
+      host_IP += IP[x];
+  }
   
   // Turn on the blacklight and print a message. 
   lcd.begin();
@@ -49,7 +64,7 @@ void setup(void){
    lcd.backlight();
    lcd.print("IP:");
    // Serial.println("Length of the IP" + String(IP.length()));
-   lcd.print(IP[10]);
+   lcd.print(host_IP);
 
   // ROUTE For Temprature Data
   server.on("/getTemprature", [](){
