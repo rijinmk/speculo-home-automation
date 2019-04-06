@@ -256,3 +256,83 @@ body {
 	left: 0px;
 	opacity: 0;
 }
+
+/* MIRROR */
+.mirror_feature_outer {
+	/* border: 1px solid red; */
+}
+
+.mirror_feature_outer .mw_option_holder {
+	/* border: 1px solid green; */
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 0px 10px 0px;
+}
+
+.mirror_feature_outer .mw_option_holder .mw_options {
+	width: 80px;
+	margin: 5px;
+	height: 80px;
+	background: #fff;
+	color: #000;
+	border-radius: 5px;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.mirror_feature_outer .mw_option_holder .mw_options svg {
+	margin-bottom: 10px;
+}
+
+.mirror_feature_outer .mw_option_holder .mw_options span {
+	font-size: 10px;
+}
+
+.mirror_feature_outer .mw_display {
+	/* border: 1px solid #fff; */
+	display: flex;
+	flex-direction: row-reverse;
+	height: auto;
+}
+
+.mirror_feature_outer .mw_display h5 {
+	margin-bottom: 5px;
+	letter-spacing: 1px;
+	opacity: 0.2;
+}
+
+.mirror_feature_outer .mw_display .mw_sides {
+	background: rgba(255, 255, 255, 0.1);
+	margin: 3px;
+	width: 50%;
+	height: auto;
+	padding: 10px;
+}
+
+.mirror_feature_outer .mw_display .mw_sides ul {
+	display: flex;
+	flex-direction: column;
+
+	/* border: 1px solid red; */
+	min-height: 100px;
+	max-height: auto;
+}
+
+.mirror_feature_outer .mw_display .mw_sides ul li {
+	list-style: none;
+	padding: 10px;
+	font-size: 10px;
+	margin-bottom: 3px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.mirror_feature_outer .mw_display .mw_left #mw_left_list {
+	border: 1px solid red;
+}

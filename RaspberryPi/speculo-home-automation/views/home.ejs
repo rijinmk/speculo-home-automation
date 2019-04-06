@@ -214,18 +214,63 @@
                         <!-- END -->
                     </div>
                 </div>
-
             </div>
 
 
             <!-- MIRROR CONTAINER -->
             <div class="_content_container" id="mirror_tab_container">
-                MIRROR
+                <div class="mirror_feature_outer">
+                    <div class="mw_option_holder">
+                        <div id="mw_time" data-icon="fa fa-clock" class="mw_options">
+                            <i class="fa fa-clock"></i>
+                            <span>TIME</span> 
+                        </div>
+                        <div id="mw_weather" data-id="calendar" data-icon="fa fa-cloud" class="mw_options">
+                            <i class="fa fa-cloud"></i>
+                            <span>WEATHER</span> 
+                        </div>
+                        <div id="mw_date" data-id="date" data-icon="fa fa-calendar" class="mw_options">
+                            <i class="fa fa-calendar"></i>
+                            <span>DATE</span> 
+                        </div>
+                        <div id="mw_cal" data-id="calendar" data-icon="fa fa-calendar" class="mw_options">
+                            <i class="fa fa-calendar"></i>
+                            <span>CALENDAR</span> 
+                        </div>
+                        <div id="mw_todo" data-id="todo" data-icon="fa fa-list" class="mw_options">
+                            <i class="fa fa-list"></i>
+                            <span>TODO</span> 
+                        </div>
+                    </div>
+
+                    <div class="mw_display">
+
+                        <div class="mw_right mw_sides">
+                            <h5>RIGHT</h5>
+                            <ul id="mw_right_list">
+
+                            </ul>
+                        </div>
+
+                        <div class="my_left mw_sides">
+                            <h5>LEFT</h5>
+                            <ul id="mw_left_list">
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    
+                </div>
             </div>
 
         </div>
     </div>
 </body>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+
 <script src="/script/home.js"></script> 
 <script src="/script/main_controller.js"></script>
+<script src="/script/plugin/jq-ui-touch.js"></script>
 </html>
