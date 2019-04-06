@@ -1,11 +1,13 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var cookieSession = require('cookie-session');
+var request = require('request');
 var passport = require('passport');
 var User = require('./models/users');
 var fs = require('fs');
 
-const PORT = process.env.PORT || 3010;
+const PORT = process.env.PORT || 3011;
+const IP_OF_NODEMCU = 'http://192.168.1.9';
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -100,6 +102,7 @@ app.post('/register', function(req, res) {
 app.get('/:usermame/home', function(req, res) {
 	if (req.user) {
 		User.findById(req.user, function(err, data) {
+			console.log(data);
 			res.render('home', data);
 		});
 	} else {
@@ -129,6 +132,27 @@ app.get('/logout', function(req, res) {
 app.get('/onlyMobile', function(req, res) {
 	res.render('onlyMobile');
 });
+
+// Get temprature data and add it to the db.json
+function handleTempData() {
+	request(`${IP_OF_NODEMCU}/getTemprature`, { json: true }, (err, res, body) => {
+		if (err) {
+			return console.log(err);
+		}
+		let tempObj = {
+			temprature: body,
+			time: new Date().getTime()
+		};
+		console.log(tempObj);
+		fs.readFile('./datastore/db.json', 'utf8', function(err, data) {
+			let obj = JSON.parse(data);
+			obj['rijinmk']['rooms']['bedroom']['temperature'].push(tempObj);
+			fs.writeFileSync('./datastore/db.json', JSON.stringify(obj));
+		});
+	});
+}
+
+setInterval(handleTempData, 1000 * 60 * 30);
 
 // Getting sensor data, test
 // app.get('/get_sensor_data', function(req, res) {

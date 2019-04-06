@@ -20,6 +20,10 @@ int curr_IP = 0;
 
 void setup(void){
 
+  // PLAYGROUND ---------------------------------------------
+  
+  //---------------------------------------------------------
+
   // SETTING UP PINS
   pinMode(A0, INPUT);
   pinMode(16, OUTPUT);
@@ -157,8 +161,14 @@ void setup(void){
   server.begin();
   Serial.println("Web server started!");
 }
- 
+
+int val; 
+
 void loop(void){
+  // PLAYGROUND --------------------------------------------  
+
+  //---------------------------------------------------------
+  
   //TEMP DATA-----------------------------------------------
   int reading = analogRead(0); 
   // measure the 3.3v with a meter for an accurate value
