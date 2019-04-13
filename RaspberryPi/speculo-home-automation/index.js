@@ -10,6 +10,33 @@ const PORT = process.env.PORT || 3011;
 const IP_OF_NODEMCU = 'http://192.168.1.14';
 var app = express();
 
+// Firebase for WAN
+let firebase = require('firebase');
+let firebaseAdmin = require('firebase-admin');
+let url = require('url');
+// Initialize Firebase
+let config = {
+	apiKey: 'AIzaSyDBwvxDTX5rrC-hc9U5SmJ_mpR42dIFrg8',
+	authDomain: 'speculo-home-automation.firebaseapp.com',
+	databaseURL: 'https://speculo-home-automation.firebaseio.com',
+	projectId: 'speculo-home-automation',
+	storageBucket: 'speculo-home-automation.appspot.com',
+	messagingSenderId: '923086343168'
+};
+if (process.env.WAN) {
+	console.log('WAN MODE');
+	firebase.initializeApp(config);
+	let database = firebase.database().ref('/WANCommand');
+	database.on('value', function(data) {
+		let currCommand = data.val().command;
+		request(`${IP_OF_NODEMCU + currCommand}`, { json: false }, (err, res, body) => {
+			if (err) {
+				return console.log(err);
+			}
+		});
+	});
+}
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('assets'));
 app.set('view engine', 'ejs');

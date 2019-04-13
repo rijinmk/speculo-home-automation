@@ -194,6 +194,20 @@
         </div>
     </div>
 </body>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDBwvxDTX5rrC-hc9U5SmJ_mpR42dIFrg8",
+    authDomain: "speculo-home-automation.firebaseapp.com",
+    databaseURL: "https://speculo-home-automation.firebaseio.com",
+    projectId: "speculo-home-automation",
+    storageBucket: "speculo-home-automation.appspot.com",
+    messagingSenderId: "923086343168"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
+</script>
 <script src="/script/main_controller.js"></script>
 <!-- REMOVE THIS LATER -->
 <script>
