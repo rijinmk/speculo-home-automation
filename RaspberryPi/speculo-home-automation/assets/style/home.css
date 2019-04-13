@@ -276,8 +276,8 @@ body {
 	width: 80px;
 	margin: 5px;
 	height: 80px;
-	background: #fff;
-	color: #000;
+	background: #353537;
+	color: rgba(255, 255, 255, 0.5);
 	border-radius: 5px;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 	display: flex;
@@ -328,7 +328,23 @@ body {
 	list-style: none;
 	padding: 10px;
 	font-size: 10px;
-	margin-bottom: 3px;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	background: rgba(255, 255, 255, 0.1);
+	margin-bottom: 6px;
+	background: rgba(255, 255, 255, 1);
+	color: #000;
+}
+
+.selected_widget {
+	display: flex;
+	justify-content: space-between;
+}
+
+.selected_widget .close_widget {
+	cursor: pointer;
+}
+
+#reset_widgets {
+	/* border: 1px solid red; */
+	position: relative;
+	left: 3px;
+	top: 2px;
 }
