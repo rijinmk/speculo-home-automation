@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/main %>
+    <link rel="stylesheet" href="/style/rooms.css">
+    <title><%= yname %>'s <%= room %></title>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Home Header -->
+        <% include partials/header %>
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDBwvxDTX5rrC-hc9U5SmJ_mpR42dIFrg8",
+    authDomain: "speculo-home-automation.firebaseapp.com",
+    databaseURL: "https://speculo-home-automation.firebaseio.com",
+    projectId: "speculo-home-automation",
+    storageBucket: "speculo-home-automation.appspot.com",
+    messagingSenderId: "923086343168"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
+</script>
+<script src="/script/garage.js"></script>
+</html>

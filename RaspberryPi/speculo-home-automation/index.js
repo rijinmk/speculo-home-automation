@@ -7,7 +7,7 @@ var User = require('./models/users');
 var fs = require('fs');
 
 const PORT = process.env.PORT || 3011;
-const IP_OF_NODEMCU = 'http://192.168.1.14';
+const IP_OF_NODEMCU = 'http://192.168.1.9';
 var app = express();
 
 // Firebase for WAN
@@ -23,7 +23,7 @@ let config = {
 	storageBucket: 'speculo-home-automation.appspot.com',
 	messagingSenderId: '923086343168'
 };
-if (process.env.WAN) {
+if (!process.env.WAN) {
 	console.log('WAN MODE');
 	firebase.initializeApp(config);
 	let database = firebase.database().ref('/WANCommand');
@@ -65,7 +65,7 @@ app.use(passport.session());
 // Routing
 // Index Page
 app.get('/', function(req, res) {
-	res.render('index');
+	res.redirect('/login');
 });
 
 // Login Page - GET
@@ -142,7 +142,7 @@ app.get('/:usermame/home/:room', function(req, res) {
 	if (req.user) {
 		User.findById(req.user, function(err, data) {
 			data.room = req.params.room;
-			res.render('room', data);
+			res.render(req.params.room, data);
 		});
 	} else {
 		res.redirect('/login');
