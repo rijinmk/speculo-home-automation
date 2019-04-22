@@ -1,0 +1,59 @@
+.container {
+	/* border: 1px solid red; */
+	width: 70%;
+	margin: 0 auto;
+}
+
+.container .apps {
+	margin-bottom: 20px;
+}
+
+#garage_control {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* border: 1px solid red; */
+}
+
+button {
+	border: none;
+	padding: 10px 15px 10px 15px;
+	font-family: 'IBM Plex Mono';
+	letter-spacing: 2px;
+	color: rgba(0, 0, 0, 0.4);
+	/* border: 1px solid #a3a3a3; */
+	cursor: pointer;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+	transition: color 0.3s, box-shadow 0.3s;
+}
+
+.container .apps .icon {
+	font-size: 30px;
+}
+
+#last_image_outer {
+	flex-direction: column;
+}
+
+#last_image {
+	width: 100%;
+}
+
+#garage {
+	/* border: 1px solid red; */
+}
+
+#garage ul {
+	/* border: 1px solid red; */
+	display: flex;
+	justify-content: space-around;
+}
+
+#garage ul li {
+	list-style: none;
+	border: 1px solid darkgray;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	padding: 10px;
+	letter-spacing: 1px;
+}
