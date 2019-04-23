@@ -6,8 +6,8 @@
 #include <LiquidCrystal_I2C.h>
  
 // Replace with your network credentials
-const char* ssid = "RMK";
-const char* password = "1fb10a2048";
+const char* ssid = "MU-STUDENT-1";
+const char* password = "mahedubai";
  
 ESP8266WebServer server(80);   //instantiate server at port 80 (http port)
 
