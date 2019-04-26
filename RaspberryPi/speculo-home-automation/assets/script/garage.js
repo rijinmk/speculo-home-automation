@@ -1,4 +1,4 @@
-const IP_GARAGE_RASP = 'http://192.168.1.15';
+const IP_GARAGE_RASP = 'http://172.17.98.69';
 
 // TURN ON AND OFF THE APPLIANCES (CHECKBOX)
 $('.switch input[type=checkbox]').on('change', function() {

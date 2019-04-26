@@ -23,7 +23,7 @@ let config = {
 	storageBucket: 'speculo-home-automation.appspot.com',
 	messagingSenderId: '923086343168'
 };
-if (!process.env.WAN) {
+if (process.env.WAN) {
 	console.log('WAN MODE');
 	firebase.initializeApp(config);
 	let database = firebase.database().ref('/WANCommand');

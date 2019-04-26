@@ -4,7 +4,7 @@
 
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
- 
+
 // Replace with your network credentials
 const char* ssid = "MU-STUDENT-1";
 const char* password = "mahedubai";
