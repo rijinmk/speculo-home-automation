@@ -5,7 +5,7 @@ let app = express();
 
 // ROUTE - /allowed_np?q=123,123
 app.get('/allowed_np', function(req, res) {
-	// Open file garage_info/allowed_np.txt and re-write file with q
+	// Open file /garage_info/allowed_np.txt and re-write file with q
 	let q = req.query.q;
 	fs.writeFile(__dirname + '/garage_info/allowed_np.txt', req.query.q, function(err) {
 		if (err) {
@@ -18,6 +18,8 @@ app.get('/allowed_np', function(req, res) {
 // ROUTE - /get_nps
 app.get('/get_nps', function(req, res) {
 	// Send a response with the allowed np
+	const content = fs.readFileSync(__dirname + '/garage_info/allowed_np.txt', 'utf8');
+	res.send(content);
 });
 
 // ROUTE - /garage_door_state?q=0
