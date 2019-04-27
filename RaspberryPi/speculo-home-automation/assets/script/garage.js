@@ -1,9 +1,10 @@
-const IP_GARAGE_RASP = 'http://172.17.98.69';
+const IP_GARAGE_RASP = 'http://192.168.1.15';
 
 // TURN ON AND OFF THE APPLIANCES (CHECKBOX)
 $('.switch input[type=checkbox]').on('change', function() {
 	var stat = $(this).is(':checked') ? 1 : 0;
 	var link = $(this).attr('data-href');
+	console.log(IP_GARAGE_RASP + link + stat);
 	$.get(IP_GARAGE_RASP + link + stat);
 	if (!stat) {
 		$('.icon svg').attr('class', 'fa fa-door-closed');
@@ -31,8 +32,10 @@ $('#set_np').click(function() {
 });
 
 $(document).ready(function() {
+	console.log(`${IP_GARAGE_RASP}/get_nps`);
 	$.get(`${IP_GARAGE_RASP}/get_nps`, function(data) {
 		let nps = data.split(',');
+		console.log(nps);
 		for (var i = 0; i < nps.length; i++) {
 			$('#garage ul').append(`<li>${nps[i]}</li>`);
 		}
