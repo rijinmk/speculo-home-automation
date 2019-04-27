@@ -72,7 +72,7 @@ p.start(3)
 def ret_num_plate():
     # os.system('sudo fswebcam number_plate.jpg')
     time.sleep(1)
-    os.system('sudo curl -X POST "https://api.openalpr.com/v2/recognize?secret_key=sk_be2a90aac4659f2a66e063f6&recognize_vehicle=1&country=ae&return_image=0&topn=10" -F image=@/home/pi/Desktop/Garage/number_plate.jpg > ~/Desktop/Garage/result.json')
+    os.system('sudo curl -X POST "https://api.openalpr.com/v2/recognize?secret_key=sk_be2a90aac4659f2a66e063f6&recognize_vehicle=1&country=ae&return_image=0&topn=10" -F image=@/home/pi/Desktop/speculo-home-automation/RaspberryPi/Garage/number_plate.jpg > ~/Desktop/speculo-home-automation/RaspberryPi/Garage/result.json')
 
     f = open('result.json', 'r')
     result = f.read()
