@@ -37,6 +37,7 @@ app.get('/garage_door_state', function(req, res) {
 // ROUTE - /get_last_image
 app.get('/get_last_image', function(req, res) {
 	// Send a response file: number_plate.jpg
+	res.send('NO IMAGE');
 });
 
 app.listen(80, function() {
