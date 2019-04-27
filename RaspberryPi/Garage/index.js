@@ -1,7 +1,10 @@
 let express = require('express');
 let fs = require('fs');
+let cors = require('cors');
 
 let app = express();
+
+app.use(cors({origin: true}));
 
 // ROUTE - /allowed_np?q=123,123
 app.get('/allowed_np', function(req, res) {
