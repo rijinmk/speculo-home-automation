@@ -1,0 +1,23 @@
+body
+{
+    background-color: black;
+    color: white;
+    font-family: "Roboto";
+    width: 100%;
+    font-weight: 400;
+}
+#list
+{
+   animation: slide infinite 5s alternate;
+}
+@keyframes slide {
+  0% {
+    margin-top: 10px;
+  }
+  50% {
+    margin-top: 50px;
+  }
+  100% {
+    margin-top: 100px;
+  }
+}
