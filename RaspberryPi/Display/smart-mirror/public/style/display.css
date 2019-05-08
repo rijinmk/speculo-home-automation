@@ -1,0 +1,36 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background: #000;
+	color: #fff;
+	overflow-x: hidden;
+}
+
+.mw {
+	width: 100%;
+	height: 90vh;
+	border: 1px solid red;
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+.mw_shell {
+	width: 35%;
+	border: 1px solid #fff;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column-reverse;
+	padding: 15px;
+}
+
+.mws {
+	border: 1px solid green;
+	width: 100%;
+	height: 25%;
+}

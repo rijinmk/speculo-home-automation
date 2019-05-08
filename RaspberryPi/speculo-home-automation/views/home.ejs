@@ -274,21 +274,22 @@
 </body>
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+<script src="/script/plugin/jq-ui-touch.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDBwvxDTX5rrC-hc9U5SmJ_mpR42dIFrg8",
-    authDomain: "speculo-home-automation.firebaseapp.com",
-    databaseURL: "https://speculo-home-automation.firebaseio.com",
-    projectId: "speculo-home-automation",
-    storageBucket: "speculo-home-automation.appspot.com",
-    messagingSenderId: "923086343168"
-  };
-  firebase.initializeApp(config);
-  var database = firebase.database();
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDBwvxDTX5rrC-hc9U5SmJ_mpR42dIFrg8",
+        authDomain: "speculo-home-automation.firebaseapp.com",
+        databaseURL: "https://speculo-home-automation.firebaseio.com",
+        projectId: "speculo-home-automation",
+        storageBucket: "speculo-home-automation.appspot.com",
+        messagingSenderId: "923086343168"
+    };
+    firebase.initializeApp(config);
+    var database = firebase.database();
+    database.ref('mirror').set({'login': 1});
 </script>
 <script src="/script/home.js"></script> 
 <script src="/script/main_controller.js"></script>
-<script src="/script/plugin/jq-ui-touch.js"></script>
 </html>

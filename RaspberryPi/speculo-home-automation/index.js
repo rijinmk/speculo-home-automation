@@ -23,9 +23,9 @@ let config = {
 	storageBucket: 'speculo-home-automation.appspot.com',
 	messagingSenderId: '923086343168'
 };
+firebase.initializeApp(config);
 if (process.env.WAN) {
 	console.log('WAN MODE');
-	firebase.initializeApp(config);
 	let database = firebase.database().ref('/WANCommand');
 	database.on('value', function(data) {
 		let currCommand = data.val().command;
@@ -152,6 +152,7 @@ app.get('/:usermame/home/:room', function(req, res) {
 // Logout
 app.get('/logout', function(req, res) {
 	req.logout();
+	firebase.database().ref('mirror').set({ login: 0 });
 	res.redirect('/login');
 });
 

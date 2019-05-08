@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DISPLAY</title>
     <link rel="stylesheet" href="display.css">
+    <!-- TEMP CLOCK  -->
+            <link rel="stylesheet" href="clock.css">
+            <script src="clock.js"></script>
+    <!-- ---------- -->
 </head>
 <body>
+        <div class="clock" style="margin:2em;"></div>
     <div class="mw">
         <div class="mw_left mw_shell">
         </div>
@@ -16,6 +21,14 @@
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var clock;
+        $(document).ready(function () {
+            clock = $('.clock').FlipClock({
+                clockFace: 'TwelveHourClock'
+            });
+        });
+    </script>
 <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 <script src="display.js"></script>
 </html>

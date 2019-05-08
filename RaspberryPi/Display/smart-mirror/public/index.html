@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style/qr.css">
+    <link rel="stylesheet" href="/style/display.css">
+    <style>
+        #qr_container, #widget_container{
+            display: none;
+        }
+    </style>
+    <title>Generate QR Code</title>
+</head>
+
+<body>
+    <div id="qr_container">
+        <div id="qrcode"></div>
+    </div>
+
+    <div id="widget_container">
+            <div class="mw">
+                <div class="mw_left mw_shell">
+                </div>
+                <div class="mw_right mw_shell">
+                </div>
+            </div>
+    </div>
+</body>
+
+<script src="/script/jq.js"></script>
+<script src="/script/qr.js"></script>
+<script src="/script/generate_qr.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDBwvxDTX5rrC-hc9U5SmJ_mpR42dIFrg8",
+        authDomain: "speculo-home-automation.firebaseapp.com",
+        databaseURL: "https://speculo-home-automation.firebaseio.com",
+        projectId: "speculo-home-automation",
+        storageBucket: "speculo-home-automation.appspot.com",
+        messagingSenderId: "923086343168"
+    };
+    firebase.initializeApp(config);
+    var database = firebase.database();
+    database.ref('mirror').on('value', function(data){
+        let _ = data.val();
+        console.log(_);
+        if(_.login){
+            $('#qr_container').fadeOut(); 
+            $('#widget_container').fadeIn(); 
+            console.log("Hide QR");
+        }else{
+            $('#qr_container').fadeIn(); 
+            $('#widget_container').fadeOut(); 
+            console.log("Show QR");
+        }
+    });
+</script>
+<script src="/script/display.js"></script>
+</html>
