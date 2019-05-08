@@ -2,7 +2,10 @@ var onScreen = database.ref('onScreen');
 
 // ALL WIDGETS
 function mw_time___GEN() {
-	let html = `<div class="mw_time mws"></div>`;
+	let html = `
+	<div class="mw_time mws">
+		<iframe src="/widget/time/clock.html">
+	</div>`;
 	return html;
 }
 
