@@ -3,7 +3,10 @@ body{
   background: #000000;
   color:#fff;
 }
-
+.title{
+  text-align: center;
+  margin-bottom: 50px;
+}
 .quoteArea{
   width: 100%;
   height: auto;
@@ -12,4 +15,8 @@ body{
   border:5px solid #fff;
   margin-bottom: 30px;
   color: #fff;
+}
+.row
+{
+   width: 100%;
 }

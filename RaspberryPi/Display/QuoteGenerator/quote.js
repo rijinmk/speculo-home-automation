@@ -13,9 +13,14 @@ function randomQuote() {
         }
     });
 }
+
 randomQuote();
-window.setInterval(function () {
-    randomQuote();
+setInterval(function () {
+    $('#randomQuote').fadeOut(2000, function () {
+        setInterval(randomQuote(), 2000);
+        $('#randomQuote').fadeIn(2000, function () {
+
+        });
+
+    });
 }, 10000);
-
-
