@@ -13,9 +13,9 @@ firebaseList.on('value', function (datasnapshot) {
         console.log(childData);
         task.innerHTML = childData;
 
-        var newTasks = `<div class='list'>
-        											<li> `+ childData + `</li>
-        										</div>`;
+        var newTasks = `
+        											<div class="todo"> `+ childData + ` <p class="date"> MAY 12 19</p></div>`
+
 
 
         // allTasks = allTasks + newTasks;
