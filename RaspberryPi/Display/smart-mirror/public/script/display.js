@@ -10,7 +10,10 @@ function mw_time___GEN() {
 }
 
 function mw_weather___GEN() {
-	let html = `<div class="mw_weather mws">mw_weather</div>`;
+	let html = `
+	<div class="mw_weather mws">
+		<iframe src="/widget/weather/weather.html">
+	</div>`;
 	return html;
 }
 

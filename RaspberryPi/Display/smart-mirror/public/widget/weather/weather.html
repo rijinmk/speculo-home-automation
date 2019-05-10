@@ -5,22 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="style.css" />-->
     <title> Weather </title>
+    <link rel="stylesheet" href="weather.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 </head>
 
 <body>
-    <div id="city"></div>
-    <div id="temp"></div>
-    <div id="icon"></div>
-    <div id="status"></div>
-    <div id="visibility"></div>
-    <div id="temp_min"></div>
-    <div id="temp_max"></div>
-    <div id="humidity"></div>
-    <div id="windspeed"></div>
-    <div id="location"></div>
-    <div id="address"></div>
 
+    <div id="weather-outer">
+        <div id="weather-shell">
+            <!-- This div will contain the icon, description and location-->
+            <div class="weather-info-holder">
+                <!-- ex: cloud icon -->
+                <div class="ftile tile weather-icon">
+                    <img class="rtr-weather-desc-icon" class="main-icon" src="icons_edit/thunderstorm.svg">
+                </div>
+                <!-- ex: clear sky -->
+                <div class="tile weather-desc">
+                    <span class="rtr-weather-desc">Clear Sky</span>
+                </div>
+                <!-- ex: sharjah, AE -->
+                <div class="tile weather-location">
+                    <!-- DONE -->
+                    <span class="rtr-weather-location">Mumbai, IN</span> 
+                </div>
+            </div>
+
+            <!-- This div will contain the temprature and humidity -->
+            <div class="weather-info-holder">
+                <!-- ex: 34C -->
+                <div class="ftile tile weather-temprature">
+                    <div class="temprature">
+                        <div class="number rtr-temp">
+                            10
+                            <span>°C</span> 
+                        </div>
+                    </div>
+                </div>
+                <!-- ex: 54 -->
+                <div class="tile sm-icon-outer weather-hum">
+                    <div class="sm-icon-info">
+                        <div>
+                            <img class="wh" src="icons_edit/h.svg" alt="">
+                        </div>
+                        <div class="rtr-hum">
+                            54
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This div will contain the high low temprature and wind speed -->
+            <div class="weather-info-holder">
+                <!-- 34 / 36 -->
+                <div class="ftile tile hltemp">
+                    <div class="hltemp_number">
+                        <div class="rtr-l">35</div>
+                        <div class="div"></div>
+                        <div class="rtr-h">37</div>
+                    </div>
+                </div>
+                <!-- 34 km/h -->
+                <div class="tile sm-icon-outer weather-wind">
+                    <div class="sm-icon-info">
+                        <div>
+                            <img class="wh" src="icons_edit/w.svg" alt="">
+                        </div>
+                        <div class="rtr-wind">
+                            34
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hide">
+        <div id="city"></div>
+        <div id="temp"></div>
+        <div id="icon"></div>
+        <div id="status"></div>
+        <div id="visibility"></div>
+        <div id="temp_min"></div>
+        <div id="temp_max"></div>
+        <div id="humidity"></div>
+        <div id="windspeed"></div>
+        <div id="location"></div>
+        <div id="address"></div>
+    </div>
+   
 </body>
 <script src="weather.js"></script>
 

@@ -1,0 +1,132 @@
+body {
+	background: #000;
+	color: #fff;
+	font-family: 'Roboto';
+	overflow: hidden;
+}
+
+#weather-outer {
+	/* border: 1px solid red; */
+	width: 100%;
+	height: 250px;
+}
+
+#weather-shell {
+	width: 100%;
+	/* border: 1px solid red; */
+	height: 100%;
+	display: flex;
+
+	justify-content: space-between;
+}
+
+#weather-shell .weather-info-holder {
+	/* border: 1px solid yellow; */
+	width: 33.333%;
+}
+
+#weather-shell .weather-info-holder .ftile {
+	/* border: 1px solid #ccc; */
+	height: 150px;
+}
+
+#weather-shell .weather-info-holder .tile {
+	/* border: 1px solid green; */
+}
+
+#weather-shell .weather-info-holder .tile .main-icon {
+	width: 100%;
+}
+
+.weather-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* border: 1px solid #fff; */
+}
+
+.temprature {
+	/* border: 1px solid #fff; */
+	height: 150px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.temprature .number {
+	font-size: 58px;
+	font-weight: 100;
+	position: relative;
+	left: 19px;
+	/* height: 100%; */
+}
+
+.temprature .number span {
+	font-size: 30px;
+	opacity: 0.6;
+	position: relative;
+	top: -40px;
+	left: -20px;
+}
+
+.hltemp {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hltemp .hltemp_number {
+	/* border: 1px solid #ccc; */
+	text-align: center;
+	font-size: 20px;
+	font-weight: 100;
+	letter-spacing: 2px;
+}
+
+.hltemp .hltemp_number .div {
+	height: 1px;
+	background: rgba(255, 255, 255, 0.2);
+	margin: 10px 0px 10px 0px;
+}
+
+.sm-icon-outer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 25px;
+}
+
+.sm-icon-info {
+	/* border: 1px solid purple; */
+	width: 75%;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sm-icon-info div:nth-child(2) {
+	font-weight: 100;
+	letter-spacing: 1px;
+}
+
+.wh {
+	width: 50px;
+}
+
+.weather-location,
+.weather-desc {
+	height: 45px;
+	font-size: 13px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 100;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.hide {
+	opacity: 0;
+}

@@ -9,8 +9,8 @@ body {
 .clock-holder {
 	position: absolute;
 	width: 152%;
-	top: -31px;
-	left: -118px;
+	top: -22px;
+	left: -65px;
 	transform: scale(0.8);
 	/* border: 1px solid red; */
 }

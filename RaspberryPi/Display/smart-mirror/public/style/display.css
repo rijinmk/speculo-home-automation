@@ -42,6 +42,11 @@ body {
 	overflow: hidden;
 }
 
+/* WIDGET HEIGHT */
 .mw_time {
 	height: 100px;
+}
+
+.mw_weather {
+	height: 270px;
 }
