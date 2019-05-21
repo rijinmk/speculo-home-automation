@@ -1,0 +1,78 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background: #1e1e20;
+	color: white;
+	font-family: "IBM Plex Mono";
+	overflow-x: hidden;
+	width: 100%;
+	font-weight: 400;
+}
+h2 {
+	margin: 5px;
+	padding: 10px;
+}
+
+#list {
+	width: 300px;
+	margin: 5px;
+	padding: 10px;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.list {
+	/* border: 1px solid red; */
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	list-style: none;
+	padding: 15px;
+	margin-bottom: 20px;
+	position: relative;
+	width: 110%;
+}
+
+#input {
+	width: 300px;
+	margin: 5px;
+	padding: 10px;
+	color: #fff;
+	border-radius: 5px;
+}
+
+#done {
+	border: none;
+	width: 20px;
+	height: 20px;
+	padding: 10px;
+	position: absolute;
+	right: -5px;
+	top: -9px;
+	border-radius: 50%;
+	font-size: 9px;
+	background: #1e1e20;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+#done span {
+	position: relative;
+	top: -6px;
+	right: 3px;
+}
+
+input[type=text] {
+	padding: 5px;
+	font-size: 13px;
+	font-family: 'IBM Plex Mono';
+}
+
+#submitbtn {
+	padding: 9px;
+	border: none;
+	letter-spacing: 1px;
+	border: 1px solid #fff;
+	color: #fff;
+	background: transparent;
+}

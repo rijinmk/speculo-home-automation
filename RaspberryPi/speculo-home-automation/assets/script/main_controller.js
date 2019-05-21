@@ -1,4 +1,4 @@
-const IP_OF_NODEMCU = 'http://192.168.1.9';
+const IP_OF_NODEMCU = 'http://172.17.96.92';
 
 // GET CURRENT STATUS OF ALL THE APPLIANCES
 // LIGHT 1

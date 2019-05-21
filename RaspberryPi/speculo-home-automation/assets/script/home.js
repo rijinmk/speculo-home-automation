@@ -26,6 +26,7 @@ function mw_list_constructor(id) {
 	let i = _id.attr('data-icon');
 	let name = $(`#${id} span`).text();
 	let __id = _id.attr('data-id');
+	bind_these();
 	let html = `
 		<li class="selected_widget" data-name="${name}" data-icon="${i}" id="${__id}">
 			<div>
@@ -113,6 +114,7 @@ $(document).ready(function() {
 		console.log(_o);
 		var mw_left = _o.mw_left;
 		var mw_right = _o.mw_right;
+
 		for (var i in mw_right) {
 			if (mw_right[i]) {
 				$(`#${i}`).hide();
@@ -126,4 +128,21 @@ $(document).ready(function() {
 			}
 		}
 	});
+});
+
+let c = 0;
+function bind_these() {
+	// TODO Edit functionality
+	$('#todo').click(function() {
+		if (c === 0) {
+			$('#todo_edit_outer').fadeIn();
+			c++;
+		}
+		console.log('c==>' + c);
+	});
+}
+
+$('.close_todo_edit_outer').click(function() {
+	$('#todo_edit_outer').fadeOut();
+	c = 0;
 });

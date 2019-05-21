@@ -30,7 +30,8 @@ function weather() {
 			$('#windspeed').html('Wind: ' + data.wind.speed);
 
 			// RENDERING DATA
-			$('.rtr-weather-location').text(`${data.name}, ${data.sys.country}`);
+			// $('.rtr-weather-location').text(`${data.name}, ${data.sys.country}`);
+			$('.rtr-weather-location').text(`Dubai, AE`);
 			$('.rtr-weather-desc').text(`${data.weather[0].description}`);
 			$('.rtr-temp').html(`${parseInt(data.main.temp)} <span>°C</span> `);
 			let icon_ = data.weather[0].description.split(' ');

@@ -18,17 +18,26 @@ function mw_weather___GEN() {
 }
 
 function mw_date___GEN() {
-	let html = `<div class="mw_date mws">mw_date</div>`;
+	let html = `
+		<div class="mw_date mws">
+			<img src="/widget/date/22.jpg">
+		</div>`;
 	return html;
 }
 
 function mw_cal___GEN() {
-	let html = `<div class="mw_cal mws">mw_cal</div>`;
+	let html = `
+	<div class="mw_cal mws">
+		<iframe src="/widget/quote/quote.html">
+	</div>`;
 	return html;
 }
 
 function mw_todo___GEN() {
-	let html = `<div class="mw_todo mws">mw_todo</div>`;
+	let html = `
+	<div class="mw_todo mws">
+		<iframe src="/widget/todo/todo.html">
+	</div>`;
 	return html;
 }
 
