@@ -9,7 +9,7 @@ function randomQuote() {
                 quoteData.quoteAuthor = 'Unknown';
             };
 
-            $("#randomQuote").html("<p id='randomQuote'><i class=\"fa fa-quote-left\"></i>    " + quoteData.quoteText + "<br/> <div class=\"text-right\"> ‐" + quoteData.quoteAuthor + "</div></p>");
+            $("#randomQuote").html("<p id='randomQuote'><i class=\"fa fa-quote-left\"></i>    " + quoteData.quoteText + "<br/> <div class=\"text-right\"> — " + quoteData.quoteAuthor + "</div></p>");
         }
     });
 }
