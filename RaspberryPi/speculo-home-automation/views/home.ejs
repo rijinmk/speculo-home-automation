@@ -216,6 +216,25 @@
                 </div>
             </div>
 
+            <!-- TEXT TO SPEECH FOR CLOCK -->
+            <script src="t2s/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+            
+            <link rel="import" href="t2s/src/voice-player.html">
+            <link rel="import" href="t2s/src/voice-recognition.html">
+
+            <voice-recognition id="clockVoice" text="You have selected the clock"></voice-recognition>
+
+            <script>
+                         window.addEventListener('WebComponentsReady', function(e) {
+                        var clock = document.querySelector('#mw_time'),
+                        element = document.querySelector('#clockVoice');
+
+                    clock.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        element.speak();
+                    });
+                });
+            </script>
 
             <!-- MIRROR CONTAINER -->
             <div class="_content_container" id="mirror_tab_container">
