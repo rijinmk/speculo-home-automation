@@ -7,7 +7,7 @@ var User = require('./models/users');
 var fs = require('fs');
 
 const PORT = process.env.PORT || 3011;
-const IP_OF_NODEMCU = 'http://172.17.96.92';
+const IP_OF_NODEMCU = 'http://172.17.101.196';
 var app = express();
 
 // Firebase for WAN

@@ -1,0 +1,28 @@
+Chapter 3: Technologies that we used
+• Home Automation
+    - NodeJS: We used NodeJS as our backend language that communicates with the Home Appliances 
+            - NPM: NPM or Node Package Manager is used for managing all our installed libraries 
+                The following are the NPM Packages that we used
+                - Passport: This is used for authenticating the user into our app
+                - Express: This is used for routing the users
+                - Cookie-Sessions: This library manages all the cookies and sessions and allows us to add personalized keys
+                - EJS: This is the templating engine that renders our UI for controlling the Home Appliances 
+                - Mongoose: A Straight forward approach to using MongoDB from NodeJS
+    - MongoDB: The cross-platform document-oriented database program that we used to store all the text based information for our app
+    - Firebase: The above features all worked on LAN, to make a real-time WAN system we used Firebase
+    - NodeMCU / ESP8266: Is a low-cost Wi-Fi microchip which controls our Appliances over WiFi using its GPIO pins
+    - Arduino IDE: A software thats used to upload the code into the NodeMCU 
+        - LiquidCrystal_I2C.h: A C header file used to control the 16x2 LCD Monitor
+
+• Smart Mirror
+    - Raspberry Pi: This acts as a server to control the mirrors display
+    - Firebase: The app controls the mirror through Firebase
+    - jQuery: An easier version of Javascript for enhancing work-flow
+    - NewsAPI: Get all the news data 
+    - Open Weather Map API: Get all the weather data
+
+• Garage System
+    - OpenALPR: For recognizing the number plate of the car
+    - RaspberryPi:  This acts as a server to control the garage and for Image Processing
+    - NodeJS + Python: Works hand-in-hand to create the complete garage system
+    - FSWEBCAM: To use the webcam that is connected to the Raspberry Pi
