@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="newsapi.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>News API</title>
+</head>
+
+<body>
+    <div id="newsBlock">
+        <!-- <div id="title"></div>
+        <div id="content"></div>
+        <div id="time"></div> -->
+    </div>
+
+</body>
+<script src="jq.js"></script>
+<script>
+    var newsBlock = document.getElementById('newsBlock');
+    $.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=e256bd42403a4b6a8a5b7453c56e8d4e", function (data) {
+        for (i = 0; i < 10; i++) {
+            var news = document.createElement('div');
+            news.setAttribute('class', 'news');
+            var title = document.createElement('div');
+            title.setAttribute('class', 'title');
+            title.innerHTML = data.articles[i].title;
+            var content = document.createElement('div');
+            content.setAttribute('class', 'content');
+            var contentText = data.articles[i].content.split(" [+")[0];
+            content.innerHTML = contentText;
+            console.log(contentText);
+            var time = document.createElement('div');
+            time.setAttribute('class', 'title');
+            time.innerHTML = data.articles[i].publishedAt;
+
+            // title.html = data.articles[i].title;
+            // $("#title").html(data.articles[i].title);
+
+            // $("#content").html(data.articles[i].content + "\n");
+
+            // $("#time").html(data.articles[i].publishedAt + "\n");
+            news.appendChild(title);
+            news.appendChild(content);
+            news.appendChild(time);
+            newsBlock.appendChild(news);
+
+        }
+    });
+
+</script>
+
+</html>
