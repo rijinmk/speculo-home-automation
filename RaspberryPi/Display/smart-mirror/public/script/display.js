@@ -20,7 +20,7 @@ function mw_weather___GEN() {
 function mw_date___GEN() {
 	let html = `
 		<div class="mw_date mws">
-			<img src="/widget/date/22.jpg">
+			<iframe src="/widget/traffic/traffic.html">
 		</div>`;
 	return html;
 }

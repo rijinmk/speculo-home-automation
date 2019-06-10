@@ -89,3 +89,8 @@ body {
 .mw_date img {
 	width: 100%;
 }
+
+.mw_date {
+	width: 100%;
+	height: 270px;
+}
