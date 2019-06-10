@@ -39,10 +39,29 @@
 
             <div class="app_outer">
                 <h3>APPLIANCES</h3>
-                <!-- LIGHT #1 ------------------------------------------------------------------------- -->
+                <!-- FAN #1 ------------------------------------------------------------------------- -->
+
+                <!-- TEXT TO SPEECH FAN -->
+
+                <script>
+                    window.addEventListener('WebComponentsReady', function(e) {
+                        var clock = document.querySelector('#fan'),
+                            element = document.querySelector('#vfan');
+        
+                        clock.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            element.speak();
+                        });
+                    });
+                    </script>
+        
+                    <voice-player id="vfan" accent="en-US" text="This is the fan"></voice-player>
+
+                <!-- TEXT TO SPEECH FAN ENDS HERE -->
+
                 <div class="app_holder">
                     <div class="each_app">
-                        <div class="app_icon">
+                        <div id = "fan" class="app_icon">
                             <img src="/images/icons/appliances/fan.svg" alt="">
                             <span>14kWh</span>
                         </div>
@@ -85,9 +104,28 @@
                 </div>
 
                  <!-- LIGHT #2 ------------------------------------------------------------------------- -->
+
+                 <!-- TEXT TO SPEECH LIGHT -->
+
+                 <script>
+                    window.addEventListener('WebComponentsReady', function(e) {
+                        var clock = document.querySelector('#light'),
+                            element = document.querySelector('#vlight');
+        
+                        clock.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            element.speak();
+                        });
+                    });
+                    </script>
+        
+                    <voice-player id="vlight" accent="en-US" text="This is the light"></voice-player>
+
+                 <!-- TEXT TO SPEECH LIGHT ENDS HERE -->
+
                 <div class="app_holder">
                     <div class="each_app">
-                        <div class="app_icon">
+                        <div id = "light" class="app_icon">
                             <img src="/images/icons/appliances/light.svg" alt="">
                             <span>14kWh</span>
                         </div>
@@ -128,10 +166,31 @@
                     </div>
                 </div>
 
+                <script src = "/t2s/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+                <link rel="import" href="/t2s/src/voice-player.html">
+                <link rel="import" href="/t2s/src/voice-recognition.html">
+
                 <!-- AC ------------------------------------------------------------------------- -->
+
+                <!-- AC TEXT TO SPEECH -->
+                <script>
+                    window.addEventListener('WebComponentsReady', function(e) {
+                        var clock = document.querySelector('#AC'),
+                            element = document.querySelector('#vac');
+        
+                        clock.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            element.speak();
+                        });
+                    });
+                    </script>
+        
+                    <voice-player id="vac" accent="en-US" text="This is the air conditioner"></voice-player>
+                <!-- AC TEXT TO SPEECH ENDS HERE -->
+
                 <div class="app_holder">
                     <div class="each_app">
-                        <div class="app_icon">
+                        <div id = "AC" class="app_icon">
                             <img src="/images/icons/appliances/air_conditioner.svg" alt="">
                             <span>14kWh</span>
                         </div>

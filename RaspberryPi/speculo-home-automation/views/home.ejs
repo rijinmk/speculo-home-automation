@@ -34,13 +34,62 @@
 
                 <div class="inner_container" id="room_inner_container">
                     <!--------------------- CARD #1 --------------------->
+
+                    <!-- VOICE FOR BEDROOM -->
+                    <script>
+                        window.addEventListener('WebComponentsReady', function(e) {
+                            var clock = document.querySelector('#br'),
+                                element = document.querySelector('#vbedroom');
+            
+                            clock.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                element.speak();
+                            });
+                        });
+                        </script>
+            
+                        <voice-player id="vbedroom" accent="en-US" text="This is the bedroom"></voice-player>
+                    <!-- VOICE FOR BEDROOM ENDS HERE -->
+            
+                    <!-- VOICE FOR GARAGE -->
+                    <script>
+                        window.addEventListener('WebComponentsReady', function(e) {
+                            var clock = document.querySelector('#garage'),
+                                element = document.querySelector('#vgarage');
+            
+                            clock.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                element.speak();
+                            });
+                        });
+                        </script>
+            
+                        <voice-player id="vgarage" accent="en-US" text="This is the garage"></voice-player>
+                    <!-- VOICE FOR GARAGE ENDS HERE -->
+
+                    <!-- VOICE FOR KITCHEN -->
+                    <script>
+                        window.addEventListener('WebComponentsReady', function(e) {
+                            var clock = document.querySelector('#kitchen'),
+                                element = document.querySelector('#vkitchen');
+            
+                            clock.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                element.speak();
+                            });
+                        });
+                        </script>
+            
+                        <voice-player id="vkitchen" accent="en-US" text="This is the kitchen"></voice-player>
+                    <!-- VOICE FOR KITCHEN ENDS HERE -->
+
                     <div class="spec_room_card" id="bedroom_room">
                         <div class="spec_room_card_header">
                             <div class="icon">
                                 <img src="/images/icons/rooms/bedroom.svg" alt="">
                             </div>
                             <div class="header_info">
-                                <h1>BEDROOM</h1>
+                                <h1 id="br">BEDROOM</h1>
                                 <div class="meter_outer">
                                     <div class="progess_data"></div>
                                 </div>
@@ -68,7 +117,7 @@
                                 <img src="/images/icons/rooms/garage.svg" alt="">
                             </div>
                             <div class="header_info">
-                                <h1>GARAGE</h1>
+                                <h1 id="garage">GARAGE</h1>
                                 <div class="meter_outer">
                                     <div class="progess_data"></div>
                                 </div>
@@ -95,7 +144,7 @@
                                 <img src="/images/icons/rooms/kitchen.svg" alt="">
                             </div>
                             <div class="header_info">
-                                <h1>KITCHEN</h1>
+                                <h1 id = 'kitchen'>KITCHEN</h1>
                                 <div class="meter_outer">
                                     <div class="progess_data"></div>
                                 </div>
@@ -216,31 +265,64 @@
                 </div>
             </div>
 
-            <!-- TEXT TO SPEECH FOR CLOCK -->
-            <script src="t2s/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-            
-            <link rel="import" href="t2s/src/voice-player.html">
-            <link rel="import" href="t2s/src/voice-recognition.html">
+            <!-- Text To Speech  -->
+           <script src = "/t2s/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+           <link rel="import" href="/t2s/src/voice-player.html">
+           <link rel="import" href="/t2s/src/voice-recognition.html">
 
-            <voice-recognition id="clockVoice" text="You have selected the clock"></voice-recognition>
+           <!-- TEXT TO SPEECH CLOCK WIDGET -->
+           <script>
+            window.addEventListener('WebComponentsReady', function(e) {
+                var clock = document.querySelector('#mw_time'),
+                    element = document.querySelector('#vclock');
 
+                clock.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    element.speak();
+                });
+            });
+            </script>
+
+            <voice-player id="vclock" accent="en-US" text="This is the clock"></voice-player>
+            <!-- TEXT TO SPEECH CLOCK WIDGET ENDS HERE -->
+
+            <!-- TEXT TO SPEECH QUOTE -->
             <script>
-                         window.addEventListener('WebComponentsReady', function(e) {
-                        var clock = document.querySelector('#mw_time'),
-                        element = document.querySelector('#clockVoice');
-
+                window.addEventListener('WebComponentsReady', function(e) {
+                    var clock = document.querySelector('#mw_cal'),
+                        element = document.querySelector('#vquote');
+    
                     clock.addEventListener('click', function(e) {
                         e.preventDefault();
                         element.speak();
                     });
                 });
-            </script>
+                </script>
+    
+                <voice-player id="vquote" accent="en-US" text="This is the quote"></voice-player>
+            <!-- TEXT TO SPEECH FOR QUOTE ENDS HERE -->
+
+            <!-- TEXT TO SPEECH FOR WEATHER -->
+            <script>
+                window.addEventListener('WebComponentsReady', function(e) {
+                    var clock = document.querySelector('#mw_weather'),
+                        element = document.querySelector('#vweather');
+    
+                    clock.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        element.speak();
+                    });
+                });
+                </script>
+    
+                <voice-player id="vweather" accent="en-US" text="This is the weather"></voice-player>
+                <!-- TEXT TO SPEECH FOR WEATHER ENDS HERE-->
 
             <!-- MIRROR CONTAINER -->
             <div class="_content_container" id="mirror_tab_container">
                 <div class="mirror_feature_outer">
                     <div class="mw_option_holder">
-                        <div id="mw_time" data-id="time" data-icon="fa fa-clock" class="mw_options">
+                        <div id="mw_time"  data-id="time" data-icon="fa fa-clock" class="mw_options">
                             <i class="fa fa-clock"></i>
                             <span>TIME</span> 
                         </div>
